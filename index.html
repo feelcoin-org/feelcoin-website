@@ -2180,6 +2180,367 @@ body{
 
 /* ===== END FEELCOIN HERO COIN PREMIUM POSITION ===== */
 
+
+/* =========================================================
+   FEELCOIN LIVE NETWORK
+   ========================================================= */
+
+.fc-network-wrap{
+  position:relative;
+  overflow:hidden;
+}
+
+.fc-network-wrap::before{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  left:50%;
+  top:48%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(
+    circle,
+    rgba(214,168,72,.09) 0%,
+    rgba(214,168,72,.025) 45%,
+    transparent 72%
+  );
+  pointer-events:none;
+}
+
+.fc-network-shell{
+  position:relative;
+  max-width:1160px;
+  margin:0 auto;
+}
+
+.fc-network-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:24px;
+  margin-bottom:30px;
+}
+
+.fc-network-heading{
+  max-width:720px;
+}
+
+.fc-network-kicker{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:12px;
+  color:#d7b15d;
+  font-size:.77rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.fc-network-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#42d786;
+  box-shadow:0 0 0 5px rgba(66,215,134,.10),
+             0 0 18px rgba(66,215,134,.42);
+  flex:0 0 auto;
+}
+
+.fc-network-dot.offline{
+  background:#ef6b6b;
+  box-shadow:0 0 0 5px rgba(239,107,107,.10),
+             0 0 18px rgba(239,107,107,.32);
+}
+
+.fc-network-dot.warn{
+  background:#e8b65a;
+  box-shadow:0 0 0 5px rgba(232,182,90,.10),
+             0 0 18px rgba(232,182,90,.32);
+}
+
+.fc-network-title{
+  margin:0 0 12px;
+  font-size:clamp(2rem,4vw,3.15rem);
+  line-height:1.03;
+  letter-spacing:-.04em;
+}
+
+.fc-network-copy{
+  margin:0;
+  max-width:690px;
+  color:var(--muted, #a9a9a9);
+  line-height:1.7;
+}
+
+.fc-network-updated{
+  flex:0 0 auto;
+  padding:9px 13px;
+  border:1px solid rgba(214,168,72,.20);
+  background:rgba(10,10,10,.42);
+  border-radius:999px;
+  color:#999;
+  font-size:.78rem;
+  white-space:nowrap;
+}
+
+.fc-network-summary{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-bottom:14px;
+}
+
+.fc-network-stat{
+  padding:22px;
+  border:1px solid rgba(214,168,72,.16);
+  border-radius:18px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.008)),
+    rgba(8,8,8,.68);
+  backdrop-filter:blur(10px);
+}
+
+.fc-network-stat-label{
+  color:#858585;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  margin-bottom:9px;
+}
+
+.fc-network-stat-value{
+  color:#f4ead0;
+  font-size:1.55rem;
+  font-weight:800;
+  letter-spacing:-.02em;
+}
+
+.fc-node-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.fc-node-card{
+  position:relative;
+  padding:26px;
+  border:1px solid rgba(214,168,72,.18);
+  border-radius:22px;
+  background:
+    linear-gradient(145deg,rgba(218,174,82,.045),transparent 45%),
+    rgba(7,7,7,.76);
+  overflow:hidden;
+}
+
+.fc-node-card::after{
+  content:"";
+  position:absolute;
+  width:160px;
+  height:160px;
+  right:-65px;
+  top:-65px;
+  border-radius:50%;
+  border:1px solid rgba(214,168,72,.10);
+  pointer-events:none;
+}
+
+.fc-node-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:18px;
+  margin-bottom:23px;
+}
+
+.fc-node-name{
+  margin:0 0 5px;
+  color:#f1e5c6;
+  font-size:1.18rem;
+  font-weight:800;
+}
+
+.fc-node-host{
+  color:#8e8e8e;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  font-size:.79rem;
+}
+
+.fc-node-status{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#7cdaa4;
+  font-size:.71rem;
+  font-weight:800;
+  letter-spacing:.1em;
+}
+
+.fc-node-status.offline{
+  color:#ef8383;
+}
+
+.fc-node-status.syncing{
+  color:#e6bd6b;
+}
+
+.fc-node-data{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.fc-node-data-item{
+  min-width:0;
+}
+
+.fc-node-data-label{
+  color:#747474;
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}
+
+.fc-node-data-value{
+  color:#dcdcdc;
+  font-size:.93rem;
+  font-weight:700;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+@media(max-width:800px){
+  .fc-network-head{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .fc-network-summary,
+  .fc-node-grid{
+    grid-template-columns:1fr;
+  }
+
+  .fc-network-updated{
+    white-space:normal;
+  }
+}
+
+@media(max-width:480px){
+  .fc-node-card,
+  .fc-network-stat{
+    padding:20px;
+  }
+
+  .fc-node-data{
+    grid-template-columns:1fr 1fr;
+    row-gap:18px;
+  }
+}
+
+
+/* Feelcoin footer contact */
+.footer-contact{
+  max-width:1600px;
+  margin:24px auto 0;
+  padding:20px 40px 0;
+  border-top:1px solid rgba(214,168,72,.12);
+  color:#777;
+  font-size:.86rem;
+  line-height:1.6;
+  text-align:center;
+  letter-spacing:.01em;
+}
+
+.footer-contact a{
+  color:#d8b562;
+  font-weight:600;
+  text-decoration:none;
+  transition:color .2s ease, opacity .2s ease;
+}
+
+.footer-contact a:hover{
+  color:#f1d48b;
+  text-decoration:none;
+}
+
+@media(max-width:700px){
+  .footer-contact{
+    padding:18px 22px 0;
+    margin-top:20px;
+    font-size:.82rem;
+  }
+}
+
+
+
+/* ===== FEELCOIN FOOTER CONTACT RIGHT ===== */
+.footer-contact{
+  margin-top:12px;
+  padding:0;
+  border-top:none;
+  max-width:none;
+  text-align:right;
+  color:rgba(255,255,255,.52);
+  font-size:.74rem;
+  line-height:1.45;
+  letter-spacing:.01em;
+}
+
+.footer-contact .footer-contact-label{
+  display:block;
+  margin-bottom:4px;
+  color:rgba(255,255,255,.42);
+  font-size:.70rem;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+}
+
+.footer-contact a{
+  color:#d8b562;
+  font-weight:600;
+  font-size:.82rem;
+  text-decoration:none;
+  transition:color .2s ease, opacity .2s ease;
+}
+
+.footer-contact a:hover{
+  color:#f1d48b;
+}
+
+@media(max-width:900px){
+  .footer-contact{
+    text-align:left;
+    margin-top:14px;
+    font-size:.72rem;
+  }
+
+  .footer-contact .footer-contact-label{
+    font-size:.68rem;
+  }
+
+  .footer-contact a{
+    font-size:.80rem;
+  }
+}
+/* ===== END FEELCOIN FOOTER CONTACT RIGHT ===== */
+
+
+/* Footer link alignment tweak */
+footer nav{
+  transform:translateX(55px);
+}
+
+@media(max-width:900px){
+  footer nav{
+    transform:none;
+  }
+}
+
 </style>
 
 <script type="application/ld+json">
@@ -3044,7 +3405,132 @@ body{
 
 <div class="wrap">
 
-  <section class="final-cta">
+  
+<section id="network-status" class="section fc-network-wrap">
+  <div class="fc-network-shell">
+
+    <div class="fc-network-head">
+      <div class="fc-network-heading">
+
+        <div class="fc-network-kicker">
+          <span id="fcNetworkDot" class="fc-network-dot"></span>
+          <span id="fcNetworkStatusText">Network Operational</span>
+        </div>
+
+        <h2 class="fc-network-title">Live Network</h2>
+
+        <p class="fc-network-copy">
+          Real-time status from the Feelcoin network.
+          Independent public nodes validate and relay the chain while
+          keeping RPC interfaces private.
+        </p>
+
+      </div>
+
+      <div id="fcNetworkUpdated" class="fc-network-updated">
+        Loading network status…
+      </div>
+    </div>
+
+    <div class="fc-network-summary">
+
+      <div class="fc-network-stat">
+        <div class="fc-network-stat-label">Blockchain Height</div>
+        <div id="fcNetworkHeight" class="fc-network-stat-value">—</div>
+      </div>
+
+      <div class="fc-network-stat">
+        <div class="fc-network-stat-label">Network Difficulty</div>
+        <div id="fcNetworkDifficulty" class="fc-network-stat-value">—</div>
+      </div>
+
+      <div class="fc-network-stat">
+        <div class="fc-network-stat-label">Block Target</div>
+        <div id="fcNetworkTarget" class="fc-network-stat-value">120s</div>
+      </div>
+
+    </div>
+
+    <div class="fc-node-grid">
+
+      <article class="fc-node-card">
+
+        <div class="fc-node-top">
+          <div>
+            <div class="fc-node-name">Node 1</div>
+            <div class="fc-node-host">node1.feelcoin.org:35780</div>
+          </div>
+
+          <div id="fcNode1Status" class="fc-node-status">
+            <span class="fc-network-dot"></span>
+            ONLINE
+          </div>
+        </div>
+
+        <div class="fc-node-data">
+
+          <div class="fc-node-data-item">
+            <div class="fc-node-data-label">Height</div>
+            <div id="fcNode1Height" class="fc-node-data-value">—</div>
+          </div>
+
+          <div class="fc-node-data-item">
+            <div class="fc-node-data-label">Incoming</div>
+            <div id="fcNode1Incoming" class="fc-node-data-value">—</div>
+          </div>
+
+          <div class="fc-node-data-item">
+            <div class="fc-node-data-label">Sync</div>
+            <div id="fcNode1Sync" class="fc-node-data-value">—</div>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="fc-node-card">
+
+        <div class="fc-node-top">
+          <div>
+            <div class="fc-node-name">Node 2</div>
+            <div class="fc-node-host">node2.feelcoin.org:35780</div>
+          </div>
+
+          <div id="fcNode2Status" class="fc-node-status">
+            <span class="fc-network-dot"></span>
+            ONLINE
+          </div>
+        </div>
+
+        <div class="fc-node-data">
+
+          <div class="fc-node-data-item">
+            <div class="fc-node-data-label">Height</div>
+            <div id="fcNode2Height" class="fc-node-data-value">—</div>
+          </div>
+
+          <div class="fc-node-data-item">
+            <div class="fc-node-data-label">P2P State</div>
+            <div id="fcNode2State" class="fc-node-data-value">—</div>
+          </div>
+
+          <div class="fc-node-data-item">
+            <div class="fc-node-data-label">Role</div>
+            <div class="fc-node-data-value">Public Node</div>
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="final-cta">
 
     <div class="kicker">
       FEELCOIN · FEEL
@@ -3159,6 +3645,13 @@ body{
 
       </nav>
 
+
+        <div class="footer-contact">
+          <span class="footer-contact-label">Support</span>
+          <a href="mailto:support@feelcoin.org">support@feelcoin.org</a>
+        </div>
+
+
     </div>
 
 
@@ -3170,12 +3663,6 @@ body{
     </div>
 
   </div>
-
-
-<div class="footer-contact">
-  Contact: <a href="mailto:support@feelcoin.org">support@feelcoin.org</a>
-</div>
-
 </footer>
 
 
@@ -3239,6 +3726,168 @@ async function copyCommand(id,button){
   }
 
 }
+
+
+/* =========================================================
+   FEELCOIN LIVE NETWORK STATUS
+   ========================================================= */
+
+function fcFormatDifficulty(value){
+  const n = Number(value);
+
+  if(!Number.isFinite(n)) return "—";
+  if(n >= 1e12) return (n / 1e12).toFixed(2) + "T";
+  if(n >= 1e9)  return (n / 1e9).toFixed(2) + "B";
+  if(n >= 1e6)  return (n / 1e6).toFixed(2) + "M";
+  if(n >= 1e3)  return (n / 1e3).toFixed(2) + "K";
+
+  return n.toLocaleString();
+}
+
+
+function fcSetNodeStatus(element, online, state){
+
+  if(!element) return;
+
+  const dot = element.querySelector(".fc-network-dot");
+
+  element.classList.remove("offline","syncing");
+  dot.classList.remove("offline","warn");
+
+  if(!online){
+    element.classList.add("offline");
+    dot.classList.add("offline");
+    element.lastChild.textContent = " OFFLINE";
+    return;
+  }
+
+  if(state && state !== "normal"){
+    element.classList.add("syncing");
+    dot.classList.add("warn");
+    element.lastChild.textContent =
+      " " + String(state).toUpperCase();
+    return;
+  }
+
+  element.lastChild.textContent = " ONLINE";
+}
+
+
+async function fcLoadNetworkStatus(){
+
+  try{
+
+    const response = await fetch(
+      "/network-status.json?t=" + Date.now(),
+      { cache:"no-store" }
+    );
+
+    if(!response.ok){
+      throw new Error("Network status request failed");
+    }
+
+    const data = await response.json();
+
+    const network = data.network || {};
+    const node1 = (data.nodes || {}).node1 || {};
+    const node2 = (data.nodes || {}).node2 || {};
+
+    document.getElementById("fcNetworkHeight").textContent =
+      Number(network.height || 0).toLocaleString();
+
+    document.getElementById("fcNetworkDifficulty").textContent =
+      fcFormatDifficulty(network.difficulty);
+
+    document.getElementById("fcNetworkTarget").textContent =
+      (network.target_seconds || 120) + "s";
+
+    document.getElementById("fcNode1Height").textContent =
+      node1.height != null
+        ? Number(node1.height).toLocaleString()
+        : "—";
+
+    document.getElementById("fcNode1Incoming").textContent =
+      node1.incoming != null
+        ? Number(node1.incoming).toLocaleString()
+        : "—";
+
+    document.getElementById("fcNode1Sync").textContent =
+      node1.synchronized ? "Synced" : "Syncing";
+
+    document.getElementById("fcNode2Height").textContent =
+      node2.height != null
+        ? Number(node2.height).toLocaleString()
+        : "—";
+
+    document.getElementById("fcNode2State").textContent =
+      node2.state
+        ? node2.state.charAt(0).toUpperCase() + node2.state.slice(1)
+        : "—";
+
+    fcSetNodeStatus(
+      document.getElementById("fcNode1Status"),
+      node1.online !== false,
+      node1.synchronized ? "normal" : "syncing"
+    );
+
+    fcSetNodeStatus(
+      document.getElementById("fcNode2Status"),
+      Boolean(node2.online),
+      node2.state
+    );
+
+    const updated = new Date(data.updated_at);
+    const age = Math.max(
+      0,
+      Math.floor((Date.now() - updated.getTime()) / 1000)
+    );
+
+    const stale = age > 120;
+
+    document.getElementById("fcNetworkUpdated").textContent =
+      stale
+        ? "Status data delayed"
+        : "Updated " + age + "s ago";
+
+    const healthy =
+      !stale &&
+      network.synchronized &&
+      node1.online !== false &&
+      node2.online;
+
+    const mainDot = document.getElementById("fcNetworkDot");
+    const mainText = document.getElementById("fcNetworkStatusText");
+
+    mainDot.classList.remove("offline","warn");
+
+    if(healthy){
+      mainText.textContent = "Network Operational";
+    }else if(stale){
+      mainDot.classList.add("warn");
+      mainText.textContent = "Status Delayed";
+    }else{
+      mainDot.classList.add("warn");
+      mainText.textContent = "Network Degraded";
+    }
+
+  }catch(error){
+
+    const mainDot = document.getElementById("fcNetworkDot");
+    const mainText = document.getElementById("fcNetworkStatusText");
+
+    mainDot.classList.add("offline");
+    mainText.textContent = "Status Unavailable";
+
+    document.getElementById("fcNetworkUpdated").textContent =
+      "Unable to retrieve live status";
+
+  }
+}
+
+
+fcLoadNetworkStatus();
+setInterval(fcLoadNetworkStatus, 30000);
+
 </script>
 
 </body>
