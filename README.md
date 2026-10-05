@@ -21,3 +21,9 @@ Feelcoin is an independent RandomX Proof-of-Work cryptocurrency with open-source
 ## Motto
 
 **In Feels We Trust.**
+
+## Contact
+
+Official Feelcoin support and project contact:
+
+**support@feelcoin.org**

@@ -2113,6 +2113,73 @@ body{
 
 /* ===== END REMOVE HERO FEEL BADGE ===== */
 
+
+
+/* ===== FEELCOIN HERO COIN PREMIUM POSITION ===== */
+
+/* Make the hero coin feel more like a designed accent */
+.hero-coin{
+  width:min(285px,72vw) !important;
+  transform:translate(55px,8px) !important;
+}
+
+/* Keep its surrounding effect proportional */
+.hero-coin-wrap{
+  justify-content:flex-end !important;
+  overflow:visible !important;
+}
+
+/* Slightly reduce the orbit scale around the coin */
+.orbit{
+  width:260px !important;
+  height:260px !important;
+}
+
+/* Desktop refinement */
+@media (min-width: 1100px){
+  .hero-visual{
+    padding-right:10px !important;
+  }
+
+  .hero-coin{
+    width:280px !important;
+    transform:translate(70px,12px) !important;
+  }
+
+  .orbit{
+    width:250px !important;
+    height:250px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1099px){
+  .hero-coin{
+    width:250px !important;
+    transform:translate(25px,8px) !important;
+  }
+
+  .orbit{
+    width:225px !important;
+    height:225px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px){
+  .hero-coin{
+    width:min(215px,62vw) !important;
+    transform:translate(10px,6px) !important;
+  }
+
+  .orbit{
+    width:195px !important;
+    height:195px !important;
+  }
+}
+
+/* ===== END FEELCOIN HERO COIN PREMIUM POSITION ===== */
+
 </style>
 
 <script type="application/ld+json">
@@ -3103,6 +3170,11 @@ body{
     </div>
 
   </div>
+
+
+<div class="footer-contact">
+  Contact: <a href="mailto:support@feelcoin.org">support@feelcoin.org</a>
+</div>
 
 </footer>
 
