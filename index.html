@@ -1,0 +1,3173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Feelcoin | Independent RandomX Cryptocurrency</title>
+
+<meta name="description"
+content="Feelcoin (FEEL) is an independent CPU-oriented RandomX Proof-of-Work cryptocurrency with transparent protocol funding, open-source software, mining pool, explorer, web wallet and paper wallet.">
+
+<meta name="theme-color" content="#070b12">
+
+<link rel="canonical" href="https://feelcoin.org/">
+
+<meta name="keywords"
+content="Feelcoin, FEEL, cryptocurrency, crypto, blockchain, RandomX, Proof of Work, PoW, CPU mining, mining pool, blockchain explorer, non-custodial wallet, paper wallet, open source cryptocurrency">
+
+<meta name="robots"
+content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+<meta name="author" content="feelcoin-dev">
+
+<meta property="og:site_name" content="Feelcoin">
+
+<meta name="twitter:site" content="@feelcoin_org">
+
+<link rel="icon" type="image/webp" href="/assets/feelcoin-coin.webp">
+<link rel="apple-touch-icon" href="/assets/feelcoin-coin.webp">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Feelcoin | Independent RandomX Cryptocurrency">
+<meta property="og:description"
+content="Independent CPU-oriented RandomX Proof-of-Work cryptocurrency with an open-source ecosystem and transparent protocol funding.">
+<meta property="og:url" content="https://feelcoin.org/">
+<meta property="og:image" content="https://feelcoin.org/assets/feelcoin-coin.webp">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Feelcoin | Independent RandomX Cryptocurrency">
+<meta name="twitter:image" content="https://feelcoin.org/assets/feelcoin-coin.webp">
+
+<meta name="twitter:description"
+content="CPU-oriented RandomX Proof-of-Work cryptocurrency with open-source wallets, mining pool, explorer and transparent protocol funding.">
+
+<style>
+:root{
+  --bg:#05080d;
+  --bg2:#09111c;
+  --panel:rgba(9,15,24,.76);
+  --panel-solid:#0b111b;
+  --panel2:rgba(17,25,38,.76);
+
+  --text:#f4f0e7;
+  --muted:#9ca7b6;
+  --soft:#cad1da;
+
+  --gold:#dfb45c;
+  --gold2:#ffdf8b;
+  --gold3:#8a5d20;
+
+  --green:#61e6a5;
+
+  --border:rgba(255,255,255,.10);
+  --gold-border:rgba(223,180,92,.30);
+
+  --shadow:0 30px 90px rgba(0,0,0,.44);
+  --radius:22px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  background:var(--bg);
+}
+
+body{
+  margin:0;
+  color:var(--text);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4,7,12,.36) 0,
+      rgba(4,7,12,.72) 45%,
+      rgba(4,7,12,.97) 100%
+    ),
+    url("/assets/feelcoin-community.webp")
+    center top / cover fixed no-repeat;
+
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background:
+    radial-gradient(
+      circle at 50% -5%,
+      rgba(223,180,92,.12),
+      transparent 34%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(3,7,12,.84),
+      rgba(3,7,12,.26) 50%,
+      rgba(3,7,12,.84)
+    );
+}
+
+a{
+  color:inherit;
+}
+
+button{
+  font:inherit;
+}
+
+.wrap{
+  width:min(1220px,calc(100% - 36px));
+  margin:0 auto;
+}
+
+
+/* =========================================================
+   TOP NAVIGATION
+   ========================================================= */
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  border-bottom:1px solid rgba(255,255,255,.07);
+
+  background:rgba(4,8,14,.79);
+
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+
+.nav-shell{
+  min-height:78px;
+
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  text-decoration:none;
+  flex-shrink:0;
+}
+
+.brand-logo{
+  width:49px;
+  height:49px;
+
+  object-fit:cover;
+  border-radius:50%;
+
+  border:1px solid rgba(255,218,134,.33);
+
+  box-shadow:
+    0 8px 28px rgba(0,0,0,.45),
+    0 0 24px rgba(223,180,92,.12);
+}
+
+.brand-copy strong{
+  display:block;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:18px;
+  letter-spacing:.7px;
+}
+
+.brand-copy span{
+  display:block;
+  margin-top:2px;
+
+  color:var(--gold);
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic;
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+.desktop-nav{
+  margin-left:auto;
+
+  display:flex;
+  align-items:center;
+  gap:3px;
+}
+
+.desktop-nav a{
+  padding:9px 11px;
+
+  color:#bbc4d1;
+  text-decoration:none;
+
+  border-radius:9px;
+
+  font-size:13px;
+  font-weight:650;
+
+  transition:.18s ease;
+}
+
+.desktop-nav a:hover{
+  color:white;
+  background:rgba(255,255,255,.065);
+}
+
+.nav-launch{
+  margin-left:7px !important;
+
+  color:#1b1305 !important;
+  background:
+    linear-gradient(135deg,var(--gold2),var(--gold)) !important;
+
+  box-shadow:0 8px 25px rgba(223,180,92,.16);
+}
+
+.mobile-toggle{
+  display:none;
+
+  width:42px;
+  height:42px;
+
+  margin-left:auto;
+
+  border:1px solid var(--border);
+  border-radius:11px;
+
+  color:white;
+  background:rgba(255,255,255,.05);
+
+  cursor:pointer;
+
+  font-size:20px;
+}
+
+.mobile-nav{
+  display:none;
+
+  padding:0 0 14px;
+
+  grid-template-columns:repeat(2,1fr);
+  gap:7px;
+}
+
+.mobile-nav a{
+  padding:11px 12px;
+
+  text-align:center;
+  text-decoration:none;
+
+  color:#dce1e8;
+
+  border:1px solid var(--border);
+  border-radius:10px;
+
+  background:rgba(255,255,255,.045);
+
+  font-size:13px;
+  font-weight:700;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+  position:relative;
+
+  min-height:690px;
+
+  display:grid;
+  align-items:center;
+
+  padding:82px 0 72px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);
+  align-items:center;
+  gap:65px;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+
+  margin-bottom:18px;
+
+  color:var(--gold2);
+
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2.1px;
+  text-transform:uppercase;
+}
+
+.eyebrow-dot{
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:var(--green);
+
+  box-shadow:0 0 16px var(--green);
+}
+
+.hero h1{
+  max-width:780px;
+
+  margin:0;
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(58px,8vw,105px);
+  line-height:.88;
+
+  letter-spacing:-3px;
+
+  text-shadow:
+    0 4px 18px rgba(0,0,0,.35),
+    0 25px 70px rgba(0,0,0,.5);
+}
+
+.hero h1 span{
+  display:block;
+
+  margin-top:19px;
+
+  color:var(--gold);
+
+  font-size:clamp(24px,3vw,38px);
+  line-height:1.1;
+  letter-spacing:1px;
+  font-style:italic;
+}
+
+.hero-description{
+  max-width:690px;
+
+  margin:28px 0 0;
+
+  color:#c3cad4;
+
+  font-size:18px;
+  line-height:1.75;
+}
+
+.hero-description strong{
+  color:white;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:11px;
+
+  margin-top:31px;
+}
+
+.btn{
+  min-height:48px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  padding:0 19px;
+
+  border:1px solid var(--border);
+  border-radius:11px;
+
+  text-decoration:none;
+
+  font-size:13px;
+  font-weight:800;
+
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    background .18s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  color:#1b1305;
+
+  border-color:rgba(255,225,147,.5);
+
+  background:
+    linear-gradient(135deg,var(--gold2),var(--gold));
+
+  box-shadow:
+    0 14px 35px rgba(223,180,92,.16);
+}
+
+.btn-secondary{
+  color:#f1f4f7;
+
+  background:rgba(8,13,21,.66);
+
+  backdrop-filter:blur(8px);
+}
+
+.btn-secondary:hover{
+  border-color:rgba(223,180,92,.4);
+}
+
+.hero-proof{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+
+  margin-top:28px;
+
+  color:#9fa9b7;
+  font-size:12px;
+  font-weight:650;
+}
+
+.hero-proof span{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.proof-dot{
+  width:5px;
+  height:5px;
+
+  border-radius:50%;
+
+  background:var(--gold);
+}
+
+
+/* HERO COIN */
+
+.coin-stage{
+  position:relative;
+
+  min-height:470px;
+
+  display:grid;
+  place-items:center;
+}
+
+.coin-stage::before{
+  content:"";
+
+  position:absolute;
+
+  width:380px;
+  height:380px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(232,190,96,.19),
+      rgba(232,190,96,.04) 42%,
+      transparent 70%
+    );
+
+  filter:blur(4px);
+}
+
+.hero-coin{
+  position:relative;
+  z-index:2;
+
+  width:min(325px,78vw);
+  aspect-ratio:1;
+
+  border-radius:50%;
+  object-fit:cover;
+
+  filter:
+    drop-shadow(0 40px 45px rgba(0,0,0,.66))
+    drop-shadow(0 0 25px rgba(226,182,80,.13));
+
+  animation:coinFloat 5s ease-in-out infinite;
+}
+
+@keyframes coinFloat{
+  0%,100%{
+    transform:translateY(0) rotate(-1deg);
+  }
+  50%{
+    transform:translateY(-15px) rotate(1deg);
+  }
+}
+
+.orbit{
+  position:absolute;
+
+  width:430px;
+  height:430px;
+
+  border:1px solid rgba(223,180,92,.13);
+  border-radius:50%;
+
+  transform:rotate(-12deg);
+}
+
+.orbit::after{
+  content:"FEEL";
+
+  position:absolute;
+  top:39px;
+  right:57px;
+
+  padding:7px 10px;
+
+  color:var(--gold2);
+
+  border:1px solid rgba(223,180,92,.22);
+  border-radius:999px;
+
+  background:rgba(4,8,14,.75);
+
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+
+/* =========================================================
+   QUICK SPECS
+   ========================================================= */
+
+.spec-strip{
+  position:relative;
+  z-index:5;
+
+  margin-top:-32px;
+  margin-bottom:95px;
+
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+
+  overflow:hidden;
+
+  border:1px solid var(--border);
+  border-radius:18px;
+
+  background:rgba(7,12,19,.76);
+
+  box-shadow:var(--shadow);
+
+  backdrop-filter:blur(14px);
+}
+
+.spec{
+  padding:21px 18px;
+
+  text-align:center;
+
+  border-right:1px solid var(--border);
+}
+
+.spec:last-child{
+  border-right:0;
+}
+
+.spec strong{
+  display:block;
+
+  color:#fff0c9;
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:21px;
+}
+
+.spec span{
+  display:block;
+
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.6px;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   SHARED SECTION STYLES
+   ========================================================= */
+
+.section{
+  padding:70px 0;
+}
+
+.section-head{
+  max-width:760px;
+  margin-bottom:34px;
+}
+
+.kicker{
+  margin-bottom:10px;
+
+  color:var(--gold);
+
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:2.3px;
+  text-transform:uppercase;
+}
+
+.section h2{
+  margin:0;
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(34px,4.4vw,53px);
+  line-height:1.08;
+}
+
+.section-lead{
+  margin:15px 0 0;
+
+  color:var(--muted);
+
+  font-size:16px;
+  line-height:1.72;
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.glass{
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15,23,35,.83),
+      rgba(6,11,18,.76)
+    );
+
+  box-shadow:0 24px 65px rgba(0,0,0,.22);
+
+  backdrop-filter:blur(12px);
+}
+
+.story{
+  padding:31px;
+}
+
+.story h3{
+  margin:0 0 15px;
+
+  color:#fff0ca;
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:24px;
+}
+
+.story p{
+  margin:0;
+
+  color:#aeb8c5;
+
+  line-height:1.75;
+}
+
+.story p + p{
+  margin-top:15px;
+}
+
+.principles{
+  padding:18px;
+
+  display:grid;
+  gap:9px;
+}
+
+.principle{
+  display:grid;
+  grid-template-columns:38px 1fr;
+  gap:14px;
+  align-items:start;
+
+  padding:15px;
+
+  border:1px solid rgba(255,255,255,.055);
+  border-radius:14px;
+
+  background:rgba(255,255,255,.025);
+}
+
+.principle-num{
+  width:38px;
+  height:38px;
+
+  display:grid;
+  place-items:center;
+
+  border:1px solid var(--gold-border);
+  border-radius:10px;
+
+  color:var(--gold2);
+
+  font-size:11px;
+  font-weight:900;
+}
+
+.principle strong{
+  display:block;
+  margin-bottom:5px;
+
+  font-size:14px;
+}
+
+.principle p{
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:12px;
+  line-height:1.55;
+}
+
+
+/* =========================================================
+   ECONOMICS
+   ========================================================= */
+
+.economics{
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:18px;
+}
+
+.split-card{
+  padding:32px;
+}
+
+.split-bar{
+  height:22px;
+
+  margin:27px 0 20px;
+
+  display:flex;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:999px;
+
+  background:#121821;
+}
+
+.split-miner{
+  width:98%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #d9a849,
+      #f0c973
+    );
+}
+
+.split-treasury{
+  width:2%;
+  min-width:7px;
+
+  background:#fff2c2;
+}
+
+.econ-numbers{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:11px;
+}
+
+.econ-number{
+  padding:17px;
+
+  border:1px solid var(--border);
+  border-radius:14px;
+
+  background:rgba(0,0,0,.13);
+}
+
+.econ-number strong{
+  display:block;
+
+  color:var(--gold2);
+
+  font-size:24px;
+}
+
+.econ-number span{
+  display:block;
+  margin-top:4px;
+
+  color:var(--muted);
+
+  font-size:11px;
+  line-height:1.4;
+}
+
+.activation{
+  padding:30px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.activation-label{
+  color:var(--muted);
+
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.activation-height{
+  margin:9px 0 4px;
+
+  color:#fff0c8;
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:54px;
+}
+
+.activation p{
+  margin:12px 0 0;
+
+  color:var(--muted);
+
+  font-size:13px;
+  line-height:1.65;
+}
+
+
+/* =========================================================
+   ECOSYSTEM
+   ========================================================= */
+
+.ecosystem-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.eco-card{
+  position:relative;
+
+  min-height:205px;
+
+  padding:25px;
+
+  display:flex;
+  flex-direction:column;
+
+  text-decoration:none;
+
+  overflow:hidden;
+
+  border:1px solid var(--border);
+  border-radius:18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16,24,36,.86),
+      rgba(7,12,19,.80)
+    );
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.eco-card:hover{
+  transform:translateY(-4px);
+
+  border-color:rgba(223,180,92,.36);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(25,31,42,.92),
+      rgba(8,13,21,.88)
+    );
+}
+
+.eco-index{
+  color:rgba(223,180,92,.56);
+
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.eco-card h3{
+  margin:22px 0 8px;
+
+  color:#f7ead0;
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:23px;
+}
+
+.eco-card p{
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:13px;
+  line-height:1.6;
+}
+
+.eco-link{
+  margin-top:auto;
+  padding-top:18px;
+
+  color:var(--gold);
+
+  font-size:12px;
+  font-weight:800;
+}
+
+
+/* =========================================================
+   MINING
+   ========================================================= */
+
+.mining-wrap{
+  padding:35px;
+
+  border-color:var(--gold-border);
+}
+
+.mining-top{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.endpoint{
+  padding:21px;
+
+  border:1px solid var(--border);
+  border-radius:15px;
+
+  background:rgba(2,6,11,.53);
+}
+
+.endpoint-label{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+
+  margin-bottom:11px;
+
+  color:#aab3c0;
+
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.3px;
+  text-transform:uppercase;
+}
+
+.secure-badge{
+  padding:4px 7px;
+
+  color:#0b2619;
+
+  border-radius:999px;
+
+  background:var(--green);
+
+  font-size:8px;
+  font-weight:900;
+}
+
+.command{
+  margin:0;
+
+  color:#ffe5a5;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size:13px;
+  line-height:1.6;
+
+  word-break:break-all;
+  white-space:pre-wrap;
+}
+
+.copy-row{
+  margin-top:11px;
+
+  display:flex;
+  justify-content:flex-end;
+}
+
+.copy-btn{
+  padding:7px 10px;
+
+  color:#bbc5d1;
+
+  border:1px solid var(--border);
+  border-radius:8px;
+
+  background:rgba(255,255,255,.04);
+
+  cursor:pointer;
+
+  font-size:10px;
+  font-weight:800;
+}
+
+.mining-note{
+  margin:20px 0 0;
+
+  color:var(--muted);
+
+  font-size:12px;
+  line-height:1.65;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+   ========================================================= */
+
+.docs-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:18px;
+}
+
+.doc-feature{
+  padding:34px;
+}
+
+.doc-version{
+  display:inline-flex;
+
+  padding:6px 9px;
+
+  color:#201600;
+
+  border-radius:999px;
+
+  background:var(--gold);
+
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.3px;
+}
+
+.doc-feature h3{
+  margin:20px 0 9px;
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:30px;
+}
+
+.doc-feature p{
+  max-width:600px;
+
+  margin:0 0 24px;
+
+  color:var(--muted);
+
+  line-height:1.7;
+}
+
+.doc-stack{
+  display:grid;
+  gap:12px;
+}
+
+.doc-small{
+  padding:23px;
+
+  text-decoration:none;
+}
+
+.doc-small strong{
+  display:block;
+
+  color:#f3ead8;
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:20px;
+}
+
+.doc-small span{
+  display:block;
+
+  margin-top:7px;
+
+  color:var(--muted);
+
+  font-size:12px;
+}
+
+
+/* =========================================================
+   OPEN SOURCE / SECURITY
+   ========================================================= */
+
+.open-source{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.notice-card{
+  padding:29px;
+}
+
+.notice-card h3{
+  margin:0 0 12px;
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:23px;
+}
+
+.notice-card p{
+  margin:0;
+
+  color:var(--muted);
+
+  line-height:1.75;
+  font-size:13px;
+}
+
+.notice-card strong{
+  color:#ede8de;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.final-cta{
+  margin:65px 0 90px;
+
+  padding:54px 30px;
+
+  text-align:center;
+
+  overflow:hidden;
+
+  border:1px solid var(--gold-border);
+  border-radius:28px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0,
+      rgba(223,180,92,.14),
+      transparent 45%
+    ),
+    rgba(8,13,21,.82);
+
+  box-shadow:var(--shadow);
+}
+
+.final-cta h2{
+  margin:0;
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(37px,6vw,65px);
+}
+
+.final-cta p{
+  max-width:650px;
+  margin:15px auto 0;
+
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.final-cta .hero-actions{
+  justify-content:center;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+  padding:32px 0 45px;
+
+  border-top:1px solid rgba(255,255,255,.07);
+
+  background:rgba(3,6,10,.54);
+}
+
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  align-items:flex-end;
+}
+
+.footer-brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.footer-brand img{
+  width:41px;
+  height:41px;
+
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.footer-brand strong{
+  display:block;
+
+  font-family:Georgia,"Times New Roman",serif;
+}
+
+.footer-brand span{
+  display:block;
+
+  margin-top:3px;
+
+  color:var(--muted);
+
+  font-size:10px;
+}
+
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:13px;
+}
+
+.footer-links a{
+  color:#99a4b2;
+
+  text-decoration:none;
+  font-size:11px;
+}
+
+.footer-links a:hover{
+  color:var(--gold2);
+}
+
+.disclaimer{
+  margin-top:27px;
+
+  color:#697586;
+
+  font-size:10px;
+  line-height:1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1000px){
+
+  .desktop-nav{
+    display:none;
+  }
+
+  .mobile-toggle{
+    display:block;
+  }
+
+  .mobile-nav.open{
+    display:grid;
+  }
+
+  .hero{
+    min-height:auto;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-description{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-actions,
+  .hero-proof{
+    justify-content:center;
+  }
+
+  .coin-stage{
+    min-height:360px;
+  }
+
+  .hero-coin{
+    width:min(315px,78vw);
+  }
+
+  .orbit{
+    width:360px;
+    height:360px;
+  }
+
+  .spec-strip{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .spec:nth-child(3){
+    border-right:0;
+  }
+
+  .spec:nth-child(-n+3){
+    border-bottom:1px solid var(--border);
+  }
+
+  .about-grid,
+  .economics,
+  .docs-grid,
+  .open-source{
+    grid-template-columns:1fr;
+  }
+
+  .ecosystem-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+
+@media(max-width:650px){
+
+  .wrap{
+    width:min(100% - 20px,1220px);
+  }
+
+  .nav-shell{
+    min-height:68px;
+  }
+
+  .brand-logo{
+    width:43px;
+    height:43px;
+  }
+
+  .brand-copy span{
+    display:none;
+  }
+
+  .hero{
+    padding:58px 0 48px;
+  }
+
+  .hero-grid{
+    gap:30px;
+  }
+
+  .hero h1{
+    font-size:clamp(51px,18vw,76px);
+    letter-spacing:-2px;
+  }
+
+  .hero h1 span{
+    font-size:23px;
+  }
+
+  .hero-description{
+    font-size:15px;
+  }
+
+  .hero-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero-actions .btn:first-child{
+    grid-column:1 / -1;
+  }
+
+  .hero-proof{
+    gap:11px;
+  }
+
+  .coin-stage{
+    min-height:300px;
+  }
+
+  .hero-coin{
+    width:min(265px,76vw);
+  }
+
+  .orbit{
+    width:305px;
+    height:305px;
+  }
+
+  .spec-strip{
+    margin-top:0;
+    margin-bottom:55px;
+
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .spec{
+    border-bottom:1px solid var(--border);
+  }
+
+  .spec:nth-child(even){
+    border-right:0;
+  }
+
+  .spec:last-child{
+    grid-column:1 / -1;
+    border-bottom:0;
+  }
+
+  .section{
+    padding:50px 0;
+  }
+
+  .story,
+  .split-card,
+  .activation,
+  .mining-wrap,
+  .doc-feature,
+  .notice-card{
+    padding:23px;
+  }
+
+  .econ-numbers{
+    grid-template-columns:1fr;
+  }
+
+  .ecosystem-grid{
+    grid-template-columns:1fr;
+  }
+
+  .mining-top{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .footer-links{
+    justify-content:flex-start;
+  }
+}
+
+
+@media(max-width:420px){
+
+  .mobile-nav{
+    grid-template-columns:1fr;
+  }
+
+  .hero-actions{
+    grid-template-columns:1fr;
+  }
+
+  .hero-actions .btn:first-child{
+    grid-column:auto;
+  }
+
+  .orbit{
+    display:none;
+  }
+}
+
+
+@media(prefers-reduced-motion:reduce){
+  html{
+    scroll-behavior:auto;
+  }
+
+  .hero-coin{
+    animation:none;
+  }
+
+  *{
+    transition:none !important;
+  }
+}
+
+
+/* ===== FEELCOIN FINAL MICRO POLISH ===== */
+
+
+/* ---------------------------------------------------------
+   HERO — stronger readability without hiding the artwork
+   --------------------------------------------------------- */
+
+.hero-grid > div:first-child{
+  position:relative;
+  z-index:3;
+}
+
+.hero-grid > div:first-child::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+
+  inset:-45px -65px -45px -55px;
+
+  background:
+    radial-gradient(
+      ellipse at 28% 45%,
+      rgba(3,7,12,.60) 0%,
+      rgba(3,7,12,.39) 44%,
+      rgba(3,7,12,.10) 70%,
+      transparent 82%
+    );
+
+  filter:blur(6px);
+  pointer-events:none;
+}
+
+.hero h1{
+  text-shadow:
+    0 2px 2px rgba(0,0,0,.80),
+    0 7px 25px rgba(0,0,0,.66),
+    0 24px 70px rgba(0,0,0,.50);
+}
+
+.hero h1 span{
+  text-shadow:
+    0 2px 3px rgba(0,0,0,.85),
+    0 9px 30px rgba(0,0,0,.70),
+    0 0 24px rgba(223,180,92,.09);
+}
+
+.hero-description{
+  color:#d0d6df;
+  text-shadow:
+    0 2px 7px rgba(0,0,0,.90),
+    0 1px 2px rgba(0,0,0,.95);
+}
+
+
+/* ---------------------------------------------------------
+   COIN — restrained premium glow
+   --------------------------------------------------------- */
+
+.coin-stage::after{
+  content:"";
+  position:absolute;
+  z-index:0;
+
+  width:280px;
+  height:280px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,215,124,.18) 0%,
+      rgba(223,180,92,.10) 31%,
+      rgba(223,180,92,.035) 53%,
+      transparent 72%
+    );
+
+  filter:blur(18px);
+
+  animation:feelGlow 4.8s ease-in-out infinite;
+}
+
+.hero-coin{
+  z-index:2;
+
+  filter:
+    drop-shadow(0 42px 48px rgba(0,0,0,.72))
+    drop-shadow(0 0 18px rgba(255,222,139,.13))
+    drop-shadow(0 0 42px rgba(216,166,62,.09));
+}
+
+@keyframes feelGlow{
+  0%,100%{
+    opacity:.72;
+    transform:scale(.96);
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1.045);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   BUTTONS — tiny interaction refinement
+   --------------------------------------------------------- */
+
+.btn{
+  position:relative;
+  overflow:hidden;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.035);
+
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    background .18s ease,
+    box-shadow .18s ease;
+}
+
+.btn-primary{
+  box-shadow:
+    0 13px 32px rgba(223,180,92,.14),
+    inset 0 1px 0 rgba(255,255,255,.38);
+}
+
+.btn-primary:hover{
+  box-shadow:
+    0 17px 38px rgba(223,180,92,.22),
+    inset 0 1px 0 rgba(255,255,255,.42);
+}
+
+.btn-secondary:hover{
+  background:rgba(18,25,36,.86);
+
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.18);
+}
+
+
+/* ---------------------------------------------------------
+   CARDS — subtle premium hover
+   --------------------------------------------------------- */
+
+.glass{
+  transition:
+    border-color .22s ease,
+    transform .22s ease,
+    box-shadow .22s ease;
+}
+
+.story:hover,
+.activation:hover,
+.notice-card:hover,
+.doc-feature:hover,
+.doc-small:hover{
+  border-color:rgba(223,180,92,.20);
+
+  box-shadow:
+    0 28px 75px rgba(0,0,0,.28);
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media(max-width:650px){
+
+  .topbar{
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+  }
+
+  .hero{
+    padding-top:42px;
+    padding-bottom:36px;
+  }
+
+  .eyebrow{
+    margin-bottom:13px;
+
+    font-size:10px;
+    letter-spacing:1.6px;
+  }
+
+  .hero h1{
+    line-height:.91;
+  }
+
+  .hero h1 span{
+    margin-top:14px;
+
+    line-height:1.18;
+  }
+
+  .hero-description{
+    max-width:94%;
+
+    margin-top:21px;
+
+    font-size:14px;
+    line-height:1.67;
+  }
+
+  .hero-actions{
+    margin-top:24px;
+    gap:8px;
+  }
+
+  .btn{
+    min-height:46px;
+
+    padding-left:14px;
+    padding-right:14px;
+
+    font-size:12px;
+  }
+
+  .hero-proof{
+    margin-top:21px;
+    gap:8px 14px;
+
+    font-size:11px;
+  }
+
+  .coin-stage{
+    min-height:270px;
+  }
+
+  .coin-stage::after{
+    width:210px;
+    height:210px;
+  }
+
+  .hero-coin{
+    width:min(225px,68vw);
+  }
+
+  .orbit{
+    width:280px;
+    height:280px;
+  }
+
+  .spec-strip{
+    border-radius:15px;
+  }
+
+  .spec{
+    padding:17px 10px;
+  }
+
+  .spec strong{
+    font-size:18px;
+  }
+
+  .section-head{
+    margin-bottom:25px;
+  }
+
+  .section h2{
+    font-size:clamp(31px,10vw,42px);
+  }
+
+  .section-lead{
+    font-size:14px;
+    line-height:1.65;
+  }
+
+  .ecosystem-grid{
+    gap:10px;
+  }
+
+  .eco-card{
+    min-height:175px;
+    padding:21px;
+  }
+
+  .eco-card h3{
+    margin-top:17px;
+  }
+
+  .final-cta{
+    margin-top:45px;
+    margin-bottom:55px;
+
+    padding:39px 20px;
+  }
+}
+
+
+@media(max-width:420px){
+
+  .brand-copy strong{
+    font-size:16px;
+  }
+
+  .hero h1{
+    font-size:49px;
+  }
+
+  .hero h1 span{
+    font-size:21px;
+  }
+
+  .hero-description{
+    max-width:100%;
+  }
+
+  .coin-stage{
+    min-height:245px;
+  }
+
+  .hero-coin{
+    width:205px;
+  }
+
+}
+
+
+/* Respect accessibility preference */
+
+@media(prefers-reduced-motion:reduce){
+
+  .coin-stage::after{
+    animation:none;
+  }
+
+}
+
+/* ===== END FEELCOIN FINAL MICRO POLISH ===== */
+
+
+
+/* ===== FEELCOIN READABILITY PATCH ===== */
+
+/* ---------------------------------------------------------
+   Better readability for section titles / intro paragraphs
+   --------------------------------------------------------- */
+
+.section-head{
+  position:relative;
+  z-index:2;
+
+  padding:18px 22px;
+  border-radius:18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(4,8,14,.58),
+      rgba(4,8,14,.34)
+    );
+
+  border:1px solid rgba(255,255,255,.05);
+
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+
+  box-shadow:
+    0 12px 36px rgba(0,0,0,.18);
+}
+
+.kicker{
+  color:#efc973;
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.90);
+}
+
+.section h2{
+  text-shadow:
+    0 2px 4px rgba(0,0,0,.88),
+    0 8px 25px rgba(0,0,0,.58);
+}
+
+.section-lead{
+  color:#d8dee6;
+  text-shadow:
+    0 2px 7px rgba(0,0,0,.92),
+    0 1px 2px rgba(0,0,0,.96);
+
+  max-width:900px;
+}
+
+/* ---------------------------------------------------------
+   Slightly stronger general paragraph contrast
+   --------------------------------------------------------- */
+
+.story p,
+.principle p,
+.eco-card p,
+.doc-feature p,
+.notice-card p,
+.activation p,
+.mining-note,
+.doc-small span,
+.econ-number span{
+  color:#cfd6de;
+}
+
+/* ---------------------------------------------------------
+   Extra help for cards that may sit over busy visual areas
+   --------------------------------------------------------- */
+
+.story,
+.principles,
+.doc-feature,
+.notice-card,
+.activation{
+  box-shadow:
+    0 24px 65px rgba(0,0,0,.28);
+}
+
+/* ---------------------------------------------------------
+   Mobile refinement
+   --------------------------------------------------------- */
+
+@media(max-width:650px){
+
+  .section-head{
+    padding:15px 16px;
+    border-radius:14px;
+  }
+
+  .section-lead{
+    font-size:15px;
+    line-height:1.7;
+  }
+}
+
+/* ===== END FEELCOIN READABILITY PATCH ===== */
+
+
+
+/* ===== FEELCOIN DEPTH BACKGROUND TEST ===== */
+
+body{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3,7,12,.82) 0%,
+      rgba(3,7,12,.68) 34%,
+      rgba(3,7,12,.46) 67%,
+      rgba(3,7,12,.56) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3,7,12,.28) 0%,
+      rgba(3,7,12,.58) 62%,
+      rgba(3,7,12,.94) 100%
+    ),
+    url("/assets/feelcoin-depth.webp")
+    center top / cover fixed no-repeat !important;
+}
+
+/* ===== END FEELCOIN DEPTH BACKGROUND TEST ===== */
+
+
+
+/* ===== FEELCOIN SOCIAL NAV POLISH ===== */
+
+.desktop-nav .social-nav{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+
+  min-height:36px;
+  padding:7px 10px;
+
+  margin-left:3px;
+
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:999px;
+
+  background:rgba(255,255,255,.035);
+
+  color:#d6dce5;
+
+  transition:
+    color .18s ease,
+    border-color .18s ease,
+    background .18s ease,
+    transform .18s ease;
+}
+
+.desktop-nav .social-nav svg{
+  width:15px;
+  height:15px;
+
+  flex:0 0 15px;
+
+  fill:currentColor;
+}
+
+.desktop-nav .social-nav:hover{
+  transform:translateY(-1px);
+
+  color:white;
+  border-color:rgba(223,180,92,.30);
+
+  background:rgba(255,255,255,.075);
+}
+
+.desktop-nav .social-x:hover{
+  color:#f5f5f5;
+}
+
+.desktop-nav .social-discord:hover{
+  color:#9ca8ff;
+  border-color:rgba(140,154,255,.32);
+}
+
+
+/* Slight visual separator before external/community links */
+
+.desktop-nav .social-x{
+  margin-left:12px;
+  position:relative;
+}
+
+.desktop-nav .social-x::before{
+  content:"";
+
+  position:absolute;
+  left:-9px;
+
+  width:1px;
+  height:21px;
+
+  background:rgba(255,255,255,.12);
+}
+
+
+/* Keep Open Wallet clearly dominant */
+
+.desktop-nav .nav-launch{
+  margin-left:10px !important;
+}
+
+
+/* Mobile social links */
+
+.mobile-nav a[href*="x.com"],
+.mobile-nav a[href*="discord.com"]{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-color:rgba(223,180,92,.15);
+}
+
+
+/* ===== END FEELCOIN SOCIAL NAV POLISH ===== */
+
+
+
+/* ===== REMOVE HERO FEEL BADGE ===== */
+
+.orbit::after{
+  display:none !important;
+  content:none !important;
+}
+
+/* ===== END REMOVE HERO FEEL BADGE ===== */
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Feelcoin",
+  "alternateName": "FEEL",
+  "url": "https://feelcoin.org/",
+  "description": "Feelcoin is an independent CPU-oriented RandomX Proof-of-Work cryptocurrency with transparent protocol funding and an open-source ecosystem.",
+  "sameAs": [
+    "https://github.com/feelcoin-org",
+    "https://x.com/feelcoin_org",
+    "https://discord.com/invite/2sx7Q8yAR"
+  ]
+}
+</script>
+</head>
+
+
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+
+    <div class="nav-shell">
+
+      <a class="brand" href="/" title="Feelcoin | Independent RandomX Cryptocurrency">
+        <img
+          class="brand-logo"
+          src="/assets/feelcoin-coin.webp"
+          alt="Feelcoin">
+
+        <div class="brand-copy">
+          <strong>FEELCOIN</strong>
+          <span>In Feels We Trust</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+
+        <a href="#about">About</a>
+        <a href="#economics">Economics</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#mining">Mining</a>
+        <a href="#docs">Documentation</a>
+
+        <a
+          href="https://github.com/feelcoin-org"
+          target="_blank"
+          rel="noopener noreferrer">
+          GitHub
+        </a>
+
+        <a
+          href="https://x.com/feelcoin_org"
+          target="_blank"
+          rel="noopener noreferrer">
+          X
+        </a>
+
+        <a
+          href="https://discord.com/invite/2sx7Q8yAR"
+          target="_blank"
+          rel="noopener noreferrer">
+          Discord
+        </a>
+
+        <a
+          class="nav-launch"
+          href="https://wallet.feelcoin.org">
+          Open Wallet
+        </a>
+
+      </nav>
+
+      <button
+        id="mobileToggle"
+        class="mobile-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false">
+        ☰
+      </button>
+
+    </div>
+
+    <nav
+      id="mobileNav"
+      class="mobile-nav"
+      aria-label="Mobile navigation">
+
+      <a href="#about">About</a>
+      <a href="#economics">Economics</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#mining">Mining</a>
+      <a href="#docs">Documentation</a>
+      <a
+        href="https://x.com/feelcoin_org"
+        target="_blank"
+        rel="noopener noreferrer">X</a>
+
+      <a
+        href="https://discord.com/invite/2sx7Q8yAR"
+        target="_blank"
+        rel="noopener noreferrer">Discord</a>
+
+      <a href="https://wallet.feelcoin.org">Open Wallet</a>
+
+    </nav>
+
+  </div>
+</header>
+
+
+<main>
+
+<!-- ======================================================
+     HERO
+     ====================================================== -->
+
+<section class="hero">
+  <div class="wrap hero-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Independent Proof-of-Work Network
+      </div>
+
+      <h1>
+        FEELCOIN
+        <span>In Feels We Trust.</span>
+      </h1>
+
+      <p class="hero-description">
+        <strong>Feelcoin (FEEL)</strong> is an independent,
+        CPU-oriented cryptocurrency powered by RandomX.
+        It combines an open-source blockchain with transparent
+        protocol funding and a complete public ecosystem built
+        around verifiability rather than promises.
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="btn btn-primary"
+          href="https://pool.feelcoin.org">
+          Start Mining →
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="https://wallet.feelcoin.org">
+          Open Web Wallet
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="https://explorer.feelcoin.org">
+          Explore the Chain
+        </a>
+
+      </div>
+
+      <div class="hero-proof">
+
+        <span>
+          <i class="proof-dot"></i>
+          RandomX
+        </span>
+
+        <span>
+          <i class="proof-dot"></i>
+          CPU-Oriented
+        </span>
+
+        <span>
+          <i class="proof-dot"></i>
+          Open Source
+        </span>
+
+        <span>
+          <i class="proof-dot"></i>
+          Independent Mainnet
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="coin-stage" aria-hidden="true">
+
+      <div class="orbit"></div>
+
+      <img
+        class="hero-coin"
+        src="/assets/feelcoin-coin.webp"
+        alt="">
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     SPECS
+     ====================================================== -->
+
+<div class="wrap">
+
+  <div class="spec-strip">
+
+    <div class="spec">
+      <strong>RandomX</strong>
+      <span>Proof of Work</span>
+    </div>
+
+    <div class="spec">
+      <strong>120 sec</strong>
+      <span>Block Target</span>
+    </div>
+
+    <div class="spec">
+      <strong>12</strong>
+      <span>Decimals</span>
+    </div>
+
+    <div class="spec">
+      <strong>98 / 2</strong>
+      <span>Miner / Treasury</span>
+    </div>
+
+    <div class="spec">
+      <strong>FEEL</strong>
+      <span>Ticker</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================================
+     ABOUT
+     ====================================================== -->
+
+<section id="about" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div class="kicker">What is Feelcoin?</div>
+
+      <h2>
+        Open foundations.
+        Independent identity.
+      </h2>
+
+      <p class="section-lead">
+        Feelcoin deliberately builds on mature open-source
+        cryptocurrency technology while operating as its own
+        blockchain with its own genesis, network, addresses,
+        chain history, treasury rule, releases and infrastructure.
+      </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+      <article class="glass story">
+
+        <h3>Built to be inspected</h3>
+
+        <p>
+          Feelcoin does not present inherited technology as a
+          clean-room invention. Its core derives from Monero
+          technology and retains transparent upstream attribution.
+        </p>
+
+        <p>
+          The project focuses its own development on an independent
+          network, transparent economics, accessible CPU mining,
+          public infrastructure, wallets and an ecosystem whose
+          behavior can be checked in source code and on-chain.
+        </p>
+
+      </article>
+
+
+      <div class="glass principles">
+
+        <div class="principle">
+          <div class="principle-num">01</div>
+          <div>
+            <strong>Open participation</strong>
+            <p>
+              RandomX keeps general-purpose CPUs a first-class
+              mining path.
+            </p>
+          </div>
+        </div>
+
+        <div class="principle">
+          <div class="principle-num">02</div>
+          <div>
+            <strong>Transparent economics</strong>
+            <p>
+              Treasury allocation is consensus-enforced and
+              visible in block data.
+            </p>
+          </div>
+        </div>
+
+        <div class="principle">
+          <div class="principle-num">03</div>
+          <div>
+            <strong>Independent validation</strong>
+            <p>
+              Full nodes determine chain validity — not a website,
+              pool or explorer.
+            </p>
+          </div>
+        </div>
+
+        <div class="principle">
+          <div class="principle-num">04</div>
+          <div>
+            <strong>No speculative promises</strong>
+            <p>
+              The project does not guarantee price, profitability,
+              exchange listings or adoption.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     ECONOMICS
+     ====================================================== -->
+
+<section id="economics" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div class="kicker">Transparent Economics</div>
+
+      <h2>
+        Protocol funding you can verify.
+      </h2>
+
+      <p class="section-lead">
+        From block 590, the development treasury is part of
+        consensus. It divides the existing block subsidy rather
+        than creating an additional reward.
+      </p>
+
+    </div>
+
+
+    <div class="economics">
+
+      <article class="glass split-card">
+
+        <div class="split-bar" aria-label="98 percent miner, 2 percent treasury">
+          <div class="split-miner"></div>
+          <div class="split-treasury"></div>
+        </div>
+
+        <div class="econ-numbers">
+
+          <div class="econ-number">
+            <strong>98%</strong>
+            <span>
+              Block subsidy to miner / pool
+            </span>
+          </div>
+
+          <div class="econ-number">
+            <strong>2%</strong>
+            <span>
+              Block subsidy to development treasury
+            </span>
+          </div>
+
+          <div class="econ-number">
+            <strong>100%</strong>
+            <span>
+              Transaction fees retained by miner / pool
+            </span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <aside class="glass activation">
+
+        <div class="activation-label">
+          Treasury activation
+        </div>
+
+        <div class="activation-height">
+          #590
+        </div>
+
+        <p>
+          The treasury split is enforced by network consensus and
+          can be independently inspected in the blockchain and
+          source code.
+        </p>
+
+      </aside>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     ECOSYSTEM
+     ====================================================== -->
+
+<section id="ecosystem" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div class="kicker">Feelcoin Ecosystem</div>
+
+      <h2>
+        One network.
+        One connected ecosystem.
+      </h2>
+
+      <p class="section-lead">
+        Official services use the canonical
+        <strong>feelcoin.org</strong> domain.
+      </p>
+
+    </div>
+
+
+    <div class="ecosystem-grid">
+
+      <a class="eco-card"
+         href="https://pool.feelcoin.org">
+
+        <div class="eco-index">01 / MINING</div>
+
+        <h3>Mining Pool</h3>
+
+        <p>
+          RandomX mining, PPLNS rewards, automatic payouts,
+          miner statistics and TLS connectivity.
+        </p>
+
+        <div class="eco-link">
+          pool.feelcoin.org →
+        </div>
+
+      </a>
+
+
+      <a class="eco-card"
+         href="https://explorer.feelcoin.org">
+
+        <div class="eco-index">02 / VERIFY</div>
+
+        <h3>Block Explorer</h3>
+
+        <p>
+          Inspect blocks, transactions, difficulty,
+          network activity and treasury-aware rewards.
+        </p>
+
+        <div class="eco-link">
+          explorer.feelcoin.org →
+        </div>
+
+      </a>
+
+
+      <a class="eco-card"
+         href="https://wallet.feelcoin.org">
+
+        <div class="eco-index">03 / WALLET</div>
+
+        <h3>Web Wallet</h3>
+
+        <p>
+          Non-custodial browser wallet with local signing,
+          encrypted browser-local storage and mainnet support.
+        </p>
+
+        <div class="eco-link">
+          wallet.feelcoin.org →
+        </div>
+
+      </a>
+
+
+      <a class="eco-card"
+         href="https://paper.feelcoin.org">
+
+        <div class="eco-index">04 / BACKUP</div>
+
+        <h3>Paper Wallet</h3>
+
+        <p>
+          Generate printable Feelcoin wallet material with
+          address, recovery data, keys, QR codes and PDF export.
+        </p>
+
+        <div class="eco-link">
+          paper.feelcoin.org →
+        </div>
+
+      </a>
+
+
+      <a class="eco-card"
+         href="https://github.com/feelcoin-org"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <div class="eco-index">05 / SOURCE</div>
+
+        <h3>GitHub</h3>
+
+        <p>
+          Inspect the core network, pool, explorer, wallets,
+          releases and project documentation.
+        </p>
+
+        <div class="eco-link">
+          github.com/feelcoin-org →
+        </div>
+
+      </a>
+
+
+      <a class="eco-card"
+         href="/docs/Feelcoin_Whitepaper_v1.2.pdf"
+         target="_blank">
+
+        <div class="eco-index">06 / DOCUMENTATION</div>
+
+        <h3>Whitepaper v1.2</h3>
+
+        <p>
+          Network specification, economics, wallet model,
+          infrastructure, security considerations and roadmap.
+        </p>
+
+        <div class="eco-link">
+          Read Whitepaper →
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     MINING
+     ====================================================== -->
+
+<section id="mining" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div class="kicker">Start Mining</div>
+
+      <h2>
+        Point RandomX at Feelcoin.
+      </h2>
+
+      <p class="section-lead">
+        The official pool supports standard and TLS mining.
+        Your Feelcoin wallet address is your miner identity.
+      </p>
+
+    </div>
+
+
+    <div class="glass mining-wrap">
+
+      <div class="mining-top">
+
+        <div class="endpoint">
+
+          <div class="endpoint-label">
+            Standard connection
+          </div>
+
+          <pre
+            class="command"
+            id="standardCommand">xmrig -o pool.feelcoin.org:4242 -u YOUR_FEELCOIN_WALLET_ADDRESS -p x</pre>
+
+          <div class="copy-row">
+            <button
+              class="copy-btn"
+              onclick="copyCommand('standardCommand',this)">
+              Copy command
+            </button>
+          </div>
+
+        </div>
+
+
+        <div class="endpoint">
+
+          <div class="endpoint-label">
+
+            TLS connection
+
+            <span class="secure-badge">
+              ENCRYPTED
+            </span>
+
+          </div>
+
+          <pre
+            class="command"
+            id="tlsCommand">xmrig -o pool.feelcoin.org:4244 -u YOUR_FEELCOIN_WALLET_ADDRESS -p x --tls</pre>
+
+          <div class="copy-row">
+            <button
+              class="copy-btn"
+              onclick="copyCommand('tlsCommand',this)">
+              Copy command
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="mining-note">
+        Official pool fee: 0.5% · Reward accounting: PPLNS.
+        Mining profitability is variable and is not guaranteed.
+        Check the pool for current network and payout information.
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="btn btn-primary"
+          href="https://pool.feelcoin.org">
+          Open Mining Pool →
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="https://explorer.feelcoin.org">
+          View Network
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     DOCUMENTATION
+     ====================================================== -->
+
+<section id="docs" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div class="kicker">Documentation</div>
+
+      <h2>
+        Verify before you trust.
+      </h2>
+
+      <p class="section-lead">
+        Feelcoin documents its current protocol behavior,
+        limitations, open-source lineage and development direction.
+      </p>
+
+    </div>
+
+
+    <div class="docs-grid">
+
+      <article class="glass doc-feature">
+
+        <div class="doc-version">
+          VERSION 1.2 · 5 OCTOBER 2026
+        </div>
+
+        <h3>Feelcoin Technical Whitepaper</h3>
+
+        <p>
+          Read the network specification, RandomX design,
+          transaction and wallet model, treasury economics,
+          mining-pool accounting, security guidance,
+          ecosystem architecture and development roadmap.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            class="btn btn-primary"
+            href="/docs/Feelcoin_Whitepaper_v1.2.pdf"
+            target="_blank">
+            Read Whitepaper
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/feelcoin-org/feelcoin/tree/main/docs"
+            target="_blank"
+            rel="noopener noreferrer">
+            Documentation Source
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <div class="doc-stack">
+
+        <a
+          class="glass doc-small"
+          href="https://github.com/feelcoin-org/feelcoin/blob/main/docs/ROADMAP.md"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <strong>Public Roadmap</strong>
+
+          <span>
+            Current development direction and completed milestones.
+          </span>
+
+        </a>
+
+
+        <a
+          class="glass doc-small"
+          href="https://github.com/feelcoin-org/feelcoin/releases"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <strong>Releases</strong>
+
+          <span>
+            Versioned binaries and published checksums.
+          </span>
+
+        </a>
+
+
+        <a
+          class="glass doc-small"
+          href="https://github.com/feelcoin-org"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <strong>Source Code</strong>
+
+          <span>
+            Core, Pool, Explorer, Web Wallet and Paper Wallet.
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     OPEN SOURCE / SECURITY
+     ====================================================== -->
+
+<section class="section">
+
+  <div class="wrap open-source">
+
+    <article class="glass notice-card">
+
+      <div class="kicker">
+        Open-Source Lineage
+      </div>
+
+      <h3>Transparent about where it comes from.</h3>
+
+      <p>
+        Feelcoin's core software is
+        <strong>derived from Monero technology</strong>.
+        The project does not claim inherited cryptographic,
+        wallet, networking or RandomX components were independently
+        invented. Feelcoin operates as an independent blockchain
+        with its own genesis, network configuration, chain state,
+        treasury rule, infrastructure and development path.
+      </p>
+
+    </article>
+
+
+    <article class="glass notice-card">
+
+      <div class="kicker">
+        Security
+      </div>
+
+      <h3>Verification matters.</h3>
+
+      <p>
+        Feelcoin is an early-stage independent network.
+        Mainnet functionality does not constitute an independent
+        security audit. Protect wallet seeds and private keys,
+        verify official domains and release checksums, and inspect
+        the open-source implementation when meaningful value is
+        involved.
+      </p>
+
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     FINAL CTA
+     ====================================================== -->
+
+<div class="wrap">
+
+  <section class="final-cta">
+
+    <div class="kicker">
+      FEELCOIN · FEEL
+    </div>
+
+    <h2>
+      In Feels We Trust.
+    </h2>
+
+    <p>
+      Mine the network. Verify the chain. Hold your own keys.
+      Inspect the source.
+    </p>
+
+    <div class="hero-actions">
+
+      <a
+        class="btn btn-primary"
+        href="https://wallet.feelcoin.org">
+        Open Wallet
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="https://pool.feelcoin.org">
+        Start Mining
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="https://github.com/feelcoin-org"
+        target="_blank"
+        rel="noopener noreferrer">
+        View Source
+      </a>
+
+    </div>
+
+  </section>
+
+</div>
+
+</main>
+
+
+<footer>
+
+  <div class="wrap">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <img
+          src="/assets/feelcoin-coin.webp"
+          alt="Feelcoin">
+
+        <div>
+          <strong>FEELCOIN</strong>
+          <span>
+            Open Source · RandomX · Independent Network
+          </span>
+        </div>
+
+      </div>
+
+
+      <nav class="footer-links">
+
+        <a href="https://pool.feelcoin.org">
+          Pool
+        </a>
+
+        <a href="https://explorer.feelcoin.org">
+          Explorer
+        </a>
+
+        <a href="https://wallet.feelcoin.org">
+          Web Wallet
+        </a>
+
+        <a href="https://paper.feelcoin.org">
+          Paper Wallet
+        </a>
+
+        <a
+          href="https://github.com/feelcoin-org"
+          target="_blank"
+          rel="noopener noreferrer">
+          GitHub
+        </a>
+
+        <a
+          href="https://x.com/feelcoin_org"
+          target="_blank"
+          rel="noopener noreferrer">
+          X
+        </a>
+
+        <a
+          href="https://discord.com/invite/2sx7Q8yAR"
+          target="_blank"
+          rel="noopener noreferrer">
+          Discord
+        </a>
+
+        <a
+          href="/docs/Feelcoin_Whitepaper_v1.2.pdf"
+          target="_blank">
+          Whitepaper
+        </a>
+
+      </nav>
+
+    </div>
+
+
+    <div class="disclaimer">
+      Feelcoin is experimental open-source cryptocurrency software.
+      Nothing on this website constitutes investment, financial,
+      legal or tax advice. Mining profitability, market value,
+      adoption and future development are not guaranteed.
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+const toggle = document.getElementById("mobileToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+toggle.addEventListener("click", () => {
+
+  const open = mobileNav.classList.toggle("open");
+
+  toggle.setAttribute(
+    "aria-expanded",
+    open ? "true" : "false"
+  );
+
+  toggle.textContent = open ? "×" : "☰";
+
+});
+
+
+mobileNav.querySelectorAll("a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    mobileNav.classList.remove("open");
+
+    toggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    toggle.textContent = "☰";
+
+  });
+
+});
+
+
+async function copyCommand(id,button){
+
+  const text =
+    document.getElementById(id).textContent.trim();
+
+  try{
+
+    await navigator.clipboard.writeText(text);
+
+    const previous = button.textContent;
+
+    button.textContent = "Copied ✓";
+
+    setTimeout(() => {
+      button.textContent = previous;
+    },1400);
+
+  }catch(e){
+
+    button.textContent = "Select & copy";
+
+  }
+
+}
+</script>
+
+</body>
+</html>

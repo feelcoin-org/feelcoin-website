@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pool.feelcoin.org/sitemap.xml
