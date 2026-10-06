@@ -1,0 +1,6 @@
+[Unit]
+Description=Generate Feelcoin network status JSON
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/feelcoin-network-status.py
