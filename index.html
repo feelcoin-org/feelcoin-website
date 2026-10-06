@@ -2541,6 +2541,141 @@ footer nav{
   }
 }
 
+
+/* ===== FEELCOIN CORE RELEASE ===== */
+.core-release{
+  max-width:1180px;
+  margin:70px auto;
+  padding:0 28px;
+}
+
+.core-release-card{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:34px;
+  align-items:center;
+  padding:34px 38px;
+  border:1px solid rgba(214,168,72,.18);
+  border-radius:24px;
+  background:
+    linear-gradient(135deg, rgba(18,18,18,.92), rgba(11,11,11,.96));
+  box-shadow:0 18px 60px rgba(0,0,0,.26);
+}
+
+.core-release-card:before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(214,168,72,.12), transparent 30%);
+}
+
+.core-release-copy,
+.core-release-actions{
+  position:relative;
+  z-index:1;
+}
+
+.core-release-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:10px;
+  color:#d8b562;
+  font-size:.74rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.core-release h2{
+  margin:0 0 10px;
+  font-size:clamp(1.7rem,3vw,2.5rem);
+  line-height:1.08;
+}
+
+.core-release p{
+  margin:0;
+  color:rgba(255,255,255,.64);
+  line-height:1.65;
+}
+
+.core-release-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.core-release-meta span{
+  padding:8px 11px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:999px;
+  background:rgba(255,255,255,.025);
+  color:rgba(255,255,255,.68);
+  font-size:.78rem;
+}
+
+.core-release-actions{
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+}
+
+.core-release-actions a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:.9rem;
+  transition:transform .2s ease, opacity .2s ease, border-color .2s ease;
+}
+
+.core-release-actions a:hover{
+  transform:translateY(-1px);
+}
+
+.core-download{
+  background:linear-gradient(135deg,#d7ae58,#b9882f);
+  color:#111 !important;
+  box-shadow:0 10px 28px rgba(214,168,72,.16);
+}
+
+.core-secondary{
+  border:1px solid rgba(214,168,72,.20);
+  background:rgba(255,255,255,.025);
+  color:#d8b562 !important;
+}
+
+.core-checksum{
+  margin-top:4px;
+  color:rgba(255,255,255,.42);
+  font-size:.7rem;
+  line-height:1.5;
+  word-break:break-all;
+  text-align:center;
+}
+
+@media(max-width:820px){
+  .core-release-card{
+    grid-template-columns:1fr;
+    padding:28px 24px;
+  }
+
+  .core-release{
+    margin:52px auto;
+    padding:0 18px;
+  }
+}
+/* ===== END FEELCOIN CORE RELEASE ===== */
+
 </style>
 
 <script type="application/ld+json">
@@ -2558,6 +2693,140 @@ footer nav{
   ]
 }
 </script>
+
+<style>
+/* FEELCOIN EXTRA NETWORK METRICS */
+.fc-extra-network{
+  margin-top:24px;
+}
+
+.fc-extra-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+
+.fc-extra-card{
+  position:relative;
+  overflow:hidden;
+  padding:20px 18px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.075),
+      rgba(255,255,255,.025)
+    );
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    0 16px 38px rgba(0,0,0,.16);
+}
+
+.fc-extra-card::before{
+  content:"";
+  position:absolute;
+  inset:0 auto auto 0;
+  width:100%;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(224,184,92,.50),
+    transparent
+  );
+}
+
+.fc-extra-label{
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+  opacity:.64;
+  margin-bottom:8px;
+}
+
+.fc-extra-value{
+  font-size:1.35rem;
+  line-height:1.2;
+  font-weight:750;
+  letter-spacing:-.025em;
+}
+
+.fc-extra-sub{
+  margin-top:6px;
+  font-size:.78rem;
+  opacity:.52;
+}
+
+.fc-economics{
+  margin-top:16px;
+  padding:18px;
+  border:1px solid rgba(224,184,92,.16);
+  border-radius:18px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(224,184,92,.065),
+      rgba(255,255,255,.025)
+    );
+}
+
+.fc-economics-title{
+  margin-bottom:14px;
+  font-size:.74rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  opacity:.60;
+}
+
+.fc-economics-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+
+.fc-economics-item{
+  min-width:0;
+}
+
+.fc-economics-value{
+  font-size:1.15rem;
+  font-weight:750;
+}
+
+.fc-economics-label{
+  margin-top:4px;
+  font-size:.76rem;
+  opacity:.58;
+}
+
+.fc-supply-note{
+  margin-top:14px;
+  font-size:.76rem;
+  line-height:1.6;
+  opacity:.55;
+}
+
+@media(max-width:900px){
+  .fc-extra-grid,
+  .fc-economics-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:560px){
+  .fc-extra-grid{
+    grid-template-columns:1fr;
+  }
+
+  .fc-economics-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+</style>
+
 </head>
 
 
@@ -2586,6 +2855,14 @@ footer nav{
         <a href="#economics">Economics</a>
         <a href="#ecosystem">Ecosystem</a>
         <a href="#mining">Mining</a>
+
+        <!-- FEELCOIN MINER NAV -->
+        <a
+          href="https://github.com/feelcoin-org/feelcoin-miner/releases/latest"
+          target="_blank"
+          rel="noopener noreferrer">
+          Miner
+        </a>
         <a href="#docs">Documentation</a>
 
         <a
@@ -2637,6 +2914,14 @@ footer nav{
       <a href="#economics">Economics</a>
       <a href="#ecosystem">Ecosystem</a>
       <a href="#mining">Mining</a>
+
+        <!-- FEELCOIN MINER NAV -->
+        <a
+          href="https://github.com/feelcoin-org/feelcoin-miner/releases/latest"
+          target="_blank"
+          rel="noopener noreferrer">
+          Miner
+        </a>
       <a href="#docs">Documentation</a>
       <a
         href="https://x.com/feelcoin_org"
@@ -3079,6 +3364,29 @@ footer nav{
       </a>
 
 
+      <!-- FEELCOIN MINER ECOSYSTEM CARD -->
+      <a class="eco-card"
+         href="https://github.com/feelcoin-org/feelcoin-miner/releases/latest"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <div class="eco-index">OFFICIAL / MINER</div>
+
+        <h3>Feelcoin Miner</h3>
+
+        <p>
+          Official RandomX CPU miner with native FEEL wallet support,
+          TLS pool mining, direct daemon solo mining and 0% default
+          upstream donation.
+        </p>
+
+        <div class="eco-link">
+          Download Feelcoin Miner v0.1.0 →
+        </div>
+
+      </a>
+
+
       <a class="eco-card"
          href="https://github.com/feelcoin-org"
          target="_blank"
@@ -3142,8 +3450,9 @@ footer nav{
       </h2>
 
       <p class="section-lead">
-        The official pool supports standard and TLS mining.
-        Your Feelcoin wallet address is your miner identity.
+        Use the official Feelcoin Miner or another compatible RandomX miner.
+        The official pool supports standard and TLS mining, and your
+        Feelcoin wallet address is your miner identity.
       </p>
 
     </div>
@@ -3161,7 +3470,7 @@ footer nav{
 
           <pre
             class="command"
-            id="standardCommand">xmrig -o pool.feelcoin.org:4242 -u YOUR_FEELCOIN_WALLET_ADDRESS -p x</pre>
+            id="standardCommand">./feelcoin-miner --wallet YOUR_FEEL_ADDRESS --worker YOUR_WORKER_NAME</pre>
 
           <div class="copy-row">
             <button
@@ -3178,17 +3487,41 @@ footer nav{
 
           <div class="endpoint-label">
 
-            TLS connection
+            Direct solo mining
 
-            <span class="secure-badge">
-              ENCRYPTED
-            </span>
+            
 
           </div>
 
           <pre
             class="command"
-            id="tlsCommand">xmrig -o pool.feelcoin.org:4244 -u YOUR_FEELCOIN_WALLET_ADDRESS -p x --tls</pre>
+            id="tlsCommand">./feelcoin-miner --solo --wallet YOUR_FEEL_ADDRESS</pre>
+
+          <p style="margin-top:12px;opacity:.82;">
+            Local daemon default: <code>127.0.0.1:35781</code>
+          </p>
+
+          <p style="margin-top:12px;opacity:.82;">
+            Custom daemon:
+          </p>
+
+          <pre
+            class="command"
+            id="remoteDaemonCommand">./feelcoin-miner --daemon --url YOUR_DAEMON_IP:35781 --wallet YOUR_FEEL_ADDRESS</pre>
+
+          <div class="copy-row">
+            <button
+              class="copy-btn"
+              onclick="copyCommand('remoteDaemonCommand',this)">
+              Copy custom daemon command
+            </button>
+          </div>
+
+          <p style="margin-top:10px;opacity:.78;">
+            Use <code>--daemon --url</code> for direct daemon mining.
+            <code>-o</code> is for pool / Stratum connections.
+            Do not expose daemon RPC directly to the public Internet.
+          </p>
 
           <div class="copy-row">
             <button
@@ -3210,6 +3543,24 @@ footer nav{
 
       <div class="hero-actions">
 
+        <!-- FEELCOIN MINER DOWNLOAD CTA -->
+        <a
+          class="btn btn-primary"
+          href="https://github.com/feelcoin-org/feelcoin-miner/releases/latest"
+          target="_blank"
+          rel="noopener noreferrer">
+          Download Feelcoin Miner →
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="https://github.com/feelcoin-org/feelcoin-miner"
+          target="_blank"
+          rel="noopener noreferrer">
+          Build from Source →
+        </a>
+
+
         <a
           class="btn btn-primary"
           href="https://pool.feelcoin.org">
@@ -3227,12 +3578,8 @@ footer nav{
     </div>
 
   </div>
-</section>
 
-
-<!-- ======================================================
-     DOCUMENTATION
-     ====================================================== -->
+      
 
 <section id="docs" class="section">
 
@@ -3527,8 +3874,127 @@ footer nav{
     </div>
 
   </div>
+
+<!-- FEELCOIN EXTRA NETWORK METRICS -->
+<div class="fc-extra-network">
+
+  <div class="fc-extra-grid">
+
+    <div class="fc-extra-card">
+      <div class="fc-extra-label">Emitted Supply</div>
+      <div id="fcEmittedSupply" class="fc-extra-value">—</div>
+      <div class="fc-extra-sub">Protocol-created FEEL</div>
+    </div>
+
+    <div class="fc-extra-card">
+      <div class="fc-extra-label">Network Hashrate</div>
+      <div id="fcCalculatedHashrate" class="fc-extra-value">—</div>
+      <div class="fc-extra-sub">Estimated from network difficulty</div>
+    </div>
+
+    <div class="fc-extra-card">
+      <div class="fc-extra-label">Block Target</div>
+      <div id="fcBlockTarget" class="fc-extra-value">120 sec</div>
+      <div class="fc-extra-sub">Target block interval</div>
+    </div>
+
+    <div class="fc-extra-card">
+      <div class="fc-extra-label">Mining Algorithm</div>
+      <div class="fc-extra-value">RandomX</div>
+      <div class="fc-extra-sub">CPU-oriented Proof of Work</div>
+    </div>
+
+  </div>
+
+  <div class="fc-economics">
+
+    <div class="fc-economics-title">
+      Network Economics
+    </div>
+
+    <div class="fc-economics-grid">
+
+      <div class="fc-economics-item">
+        <div class="fc-economics-value">98%</div>
+        <div class="fc-economics-label">Miner subsidy share</div>
+      </div>
+
+      <div class="fc-economics-item">
+        <div class="fc-economics-value">2%</div>
+        <div class="fc-economics-label">Treasury share</div>
+      </div>
+
+      <div class="fc-economics-item">
+        <div class="fc-economics-value">0.5%</div>
+        <div class="fc-economics-label">Official pool fee</div>
+      </div>
+
+      <div class="fc-economics-item">
+        <div class="fc-economics-value">0%</div>
+        <div class="fc-economics-label">Direct daemon solo fee</div>
+      </div>
+
+    </div>
+
+    <div class="fc-supply-note">
+      Emitted Supply represents FEEL created through protocol block subsidy.
+      Transaction fees are excluded because they redistribute existing FEEL.
+      From block 590, the subsidy is split 98% to miners and 2% to the
+      consensus-enforced development treasury.
+    </div>
+
+  </div>
+
+</div>
+
 </section>
 
+
+
+<section class="core-release" id="download">
+  <div class="core-release-card">
+    <div class="core-release-copy">
+      <div class="core-release-kicker">Latest Stable Release</div>
+      <h2>Feelcoin Core v0.2.1</h2>
+      <p>
+        Official Linux x86_64 release with automatic Feelcoin mainnet
+        bootstrap through Node1 and Node2. No consensus changes and no
+        miner update is required.
+      </p>
+
+      <div class="core-release-meta">
+        <span>Linux x86_64</span>
+        <span>RandomX</span>
+        <span>Automatic Bootstrap</span>
+        <span>SHA256 Verified</span>
+      </div>
+    </div>
+
+    <div class="core-release-actions">
+      <a class="core-download"
+         href="https://github.com/feelcoin-org/feelcoin/releases/download/v0.2.1/feelcoin-v0.2.1-linux-x64.tar.gz"
+         target="_blank" rel="noopener">
+        Download Core v0.2.1
+      </a>
+
+      <a class="core-secondary"
+         href="https://github.com/feelcoin-org/feelcoin/releases/tag/v0.2.1"
+         target="_blank" rel="noopener">
+        Release Notes
+      </a>
+
+      <a class="core-secondary"
+         href="https://github.com/feelcoin-org/feelcoin/releases/download/v0.2.1/feelcoin-v0.2.1-linux-x64.tar.gz.sha256"
+         target="_blank" rel="noopener">
+        SHA256 File
+      </a>
+
+      <div class="core-checksum">
+        162b89f887e9df7572447c0d650fd8ed97f494cf97ccc17a9477ae214bf5adb1
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="final-cta">
 
@@ -3614,6 +4080,13 @@ footer nav{
 
         <a href="https://paper.feelcoin.org">
           Paper Wallet
+        </a>
+
+        <a
+          href="https://github.com/feelcoin-org/feelcoin-miner/releases/latest"
+          target="_blank"
+          rel="noopener noreferrer">
+          Miner
         </a>
 
         <a
@@ -3889,6 +4362,154 @@ fcLoadNetworkStatus();
 setInterval(fcLoadNetworkStatus, 30000);
 
 </script>
+
+
+
+<script>
+/* FEELCOIN EXTRA NETWORK METRICS */
+
+function fcFormatHashrate(value){
+  const n = Number(value);
+
+  if(!Number.isFinite(n) || n < 0){
+    return "—";
+  }
+
+  if(n >= 1e9){
+    return (n / 1e9).toFixed(2) + " GH/s";
+  }
+
+  if(n >= 1e6){
+    return (n / 1e6).toFixed(2) + " MH/s";
+  }
+
+  if(n >= 1e3){
+    return (n / 1e3).toFixed(2) + " KH/s";
+  }
+
+  return n.toFixed(0) + " H/s";
+}
+
+
+function fcFormatSupply(value){
+  const n = Number(value);
+
+  if(!Number.isFinite(n)){
+    return "—";
+  }
+
+  return n.toLocaleString(undefined,{
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 6
+  }) + " FEEL";
+}
+
+
+async function fcRefreshExtraNetwork(){
+
+  try{
+
+    const r = await fetch(
+      "/network-status.json?t=" + Date.now(),
+      {
+        cache: "no-store"
+      }
+    );
+
+    if(!r.ok){
+      throw new Error(
+        "network status HTTP " + r.status
+      );
+    }
+
+    const data = await r.json();
+    const network = data.network || {};
+
+
+    /* NETWORK HASHRATE */
+
+    const difficulty =
+      Number(network.difficulty);
+
+    const target =
+      Number(network.target_seconds || 120);
+
+    if(
+      Number.isFinite(difficulty) &&
+      Number.isFinite(target) &&
+      target > 0
+    ){
+
+      const el =
+        document.getElementById(
+          "fcCalculatedHashrate"
+        );
+
+      if(el){
+        el.textContent =
+          fcFormatHashrate(
+            difficulty / target
+          );
+      }
+    }
+
+
+    /* BLOCK TARGET */
+
+    if(Number.isFinite(target)){
+
+      const el =
+        document.getElementById(
+          "fcBlockTarget"
+        );
+
+      if(el){
+        el.textContent =
+          target + " sec";
+      }
+    }
+
+
+    /* EMITTED SUPPLY */
+
+    const supplyEl =
+      document.getElementById(
+        "fcEmittedSupply"
+      );
+
+    if(supplyEl){
+
+      if(network.emitted_supply != null){
+
+        supplyEl.textContent =
+          fcFormatSupply(
+            network.emitted_supply
+          );
+
+      }else{
+
+        supplyEl.textContent = "—";
+      }
+    }
+
+  }catch(err){
+
+    console.warn(
+      "Feelcoin network metric refresh failed:",
+      err
+    );
+  }
+}
+
+
+fcRefreshExtraNetwork();
+
+setInterval(
+  fcRefreshExtraNetwork,
+  30000
+);
+</script>
+
 
 </body>
 </html>
