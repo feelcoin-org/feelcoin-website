@@ -45,6 +45,17 @@ Feelcoin provides several wallet interfaces for different needs:
 
 Wallet users should protect their recovery seeds and private keys and carefully review beta-software notices.
 
+### 🧩 Developers and public API
+
+The official read-only public statistics API is available to mining directories, exchanges, network monitors, and community developers.
+
+- **API documentation:** https://api.feelcoin.org/docs
+- **OpenAPI schema:** https://api.feelcoin.org/openapi.json
+- **Network statistics:** https://api.feelcoin.org/v1/network
+- **Integration guide:** https://github.com/feelcoin-org/feelcoin/blob/main/docs/PUBLIC_API.md
+
+The Public API is for observable chain and mining data. It cannot process deposits, withdrawals, or private wallet operations.
+
 ### 🤝 Open development and community
 
 The project's source code and individual component repositories are published through https://github.com/feelcoin-org. Community members can inspect code, report reproducible issues and follow development milestones.
@@ -72,6 +83,7 @@ Feelcoin documents its development, infrastructure and protocol funding through 
 | Blockchain | https://github.com/feelcoin-org/feelcoin |
 | Mining pool | https://pool.feelcoin.org |
 | Block explorer | https://explorer.feelcoin.org |
+| Developer API | https://api.feelcoin.org/docs |
 | Web wallet | https://wallet.feelcoin.org |
 | Paper wallet | https://paper.feelcoin.org |
 | Android wallet | https://github.com/feelcoin-org/feelcoin-android |
