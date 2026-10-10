@@ -17,9 +17,14 @@ START = "/* FEELCOIN_NAV_WALLETS_V2_START"
 END = "/* FEELCOIN_NAV_WALLETS_V2_END */"
 DESKTOP = re.compile(r'<nav class="desktop-nav"[^>]*>.*?</nav>', re.S)
 MOBILE = re.compile(r'<nav\s+id="mobileNav"[^>]*>.*?</nav>', re.S)
-OLD = re.compile(
+# Match the complete current navigation group, regardless of Explorer markup.
+OLD_DESKTOP = re.compile(
     r'<a href="#ecosystem">Ecosystem</a>.*?'
-    r'<a href="https://explorer\.feelcoin\.org"[^>]*>Explorer</a>', re.S
+    r'(?=<a\s+href="https://github\.com/feelcoin-org")', re.S
+)
+OLD_MOBILE = re.compile(
+    r'<a href="#ecosystem">Ecosystem</a>.*?'
+    r'(?=<a\s+href="https://x\.com/feelcoin_org")', re.S
 )
 NEW = re.compile(
     r'<a href="#ecosystem">Ecosystem</a>.*?'
@@ -55,7 +60,10 @@ def apply_patch(live, source):
         source_nav = exactly_one(pattern, source, "source " + name).group()
         live_nav = exactly_one(pattern, new_live, "live " + name).group()
         source_fragment = exactly_one(NEW, source_nav, "approved " + name).group()
-        old_match = exactly_one(OLD, live_nav, "existing " + name)
+        old_match = exactly_one(
+            OLD_DESKTOP if name == "desktop" else OLD_MOBILE,
+            live_nav, "existing " + name
+        )
 
         # Fail closed if other site navigation differs from the expected version.
         for field in (
@@ -76,7 +84,7 @@ def apply_patch(live, source):
             raise RuntimeError(f"{name}: rest of navigation changed; refusing edit")
 
         updated_nav = (
-            live_nav[:old_match.start()] + source_fragment
+            live_nav[:old_match.start()] + source_fragment + "\n        "
             + live_nav[old_match.end():]
         )
         if updated_nav.count('>Explorer</a>') != 1 or updated_nav.count('>Pool</a>') != 1:
