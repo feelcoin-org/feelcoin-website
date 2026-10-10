@@ -2879,6 +2879,39 @@ footer nav{
 }
 /* FEELCOIN_SINGLE_ROW_WALLET_MENU_V1_END */
 
+/* FEELCOIN_CENTER_NAV_ARROW_V1_START */
+@media(min-width:1331px) {
+  /* Keep the original single-row height and center links in the space beside the logo. */
+  .nav-shell { gap:16px; }
+  .desktop-nav {
+    margin-left:0;
+    flex:1 1 auto;
+    min-width:0;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+  }
+  .desktop-nav > a,
+  .desktop-nav .fc-nav-wallets > summary {
+    white-space:nowrap;
+  }
+  .desktop-nav .fc-nav-wallets > summary {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+  }
+  .desktop-nav .fc-nav-wallets .fc-wallet-chevron {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    height:1em;
+    line-height:1;
+    transform:translateY(-2px);
+  }
+}
+/* FEELCOIN_CENTER_NAV_ARROW_V1_END */
+
 </style>
 
 </head>
