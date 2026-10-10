@@ -85,10 +85,16 @@ def version_of(nav, name):
     if nav.count(ECOSYSTEM) != 1:
         raise RuntimeError(name + ": Ecosystem button missing")
     if old_one:
-        for s in ('href="#mining"', 'href="#desktop-wallet"',
-                  'href="#android-wallet"', 'href="https://explorer.feelcoin.org"'):
-            if nav.count(s) != 1:
-                raise RuntimeError(name + ": legacy single-row links changed")
+        # Explorer may not exist yet in the deployed single-row header.
+        for link in ('href="#mining"', 'href="#desktop-wallet"',
+                     'href="#android-wallet"', 'href="#docs"',
+                     'href="https://api.feelcoin.org/docs"'):
+            if nav.count(link) != 1:
+                raise RuntimeError(
+                    f"{name}: expected one {link}; found {nav.count(link)}"
+                )
+        if nav.count('href="https://explorer.feelcoin.org"') > 1:
+            raise RuntimeError(name + ": duplicate legacy Explorer links")
         return "original"
     for s in ('href="https://pool.feelcoin.org"',
               'href="https://paper.feelcoin.org"',
@@ -130,9 +136,24 @@ def patch(live, approved):
             r'^[ \t]*<a href="#about">About</a>[ \t]*\r?\n',
             '', prefix, flags=re.M,
         )
-        # Do not silently drop an unfamiliar navigation item.
-        if '<a ' in prefix or '<details' in prefix:
-            raise RuntimeError(name + ": unexpected links before Ecosystem")
+        # Preserve legacy secondary anchors (such as Economics) that
+        # precede Ecosystem on production mobile navigation.
+        if '<details' in prefix or '<nav' in prefix:
+            raise RuntimeError(name + ": unexpected prefix structure")
+
+        # Reject unfamiliar links within the group that is replaced.
+        known_links = {
+            "#ecosystem", "#mining", "#desktop-wallet", "#android-wallet",
+            "#docs", "https://api.feelcoin.org/docs",
+            "https://explorer.feelcoin.org", "https://pool.feelcoin.org",
+            "https://paper.feelcoin.org",
+        }
+        old_group = current[old_start:old_end]
+        hrefs = re.findall(r'<a\\b[^>]*\\bhref="([^"]+)"', old_group)
+        extra = sorted(set(hrefs) - known_links)
+        if extra:
+            raise RuntimeError(f"{name}: unfamiliar links within primary nav: {extra}")
+
         next_nav = (
             prefix + desired[new_start:new_end]
             + current[old_end:]
