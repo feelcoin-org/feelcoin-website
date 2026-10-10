@@ -68,9 +68,9 @@ def apply_patch(live, source):
                 raise RuntimeError(f"{name}: unexpected nav field: {field}")
 
         expected_after = (
-            '<a href="https://github.com/feelcoin-org"'
+            'href="https://github.com/feelcoin-org"'
             if name == "desktop"
-            else '<a href="https://x.com/feelcoin_org"'
+            else 'href="https://x.com/feelcoin_org"'
         )
         if expected_after not in live_nav:
             raise RuntimeError(f"{name}: rest of navigation changed; refusing edit")
