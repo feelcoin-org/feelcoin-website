@@ -2826,96 +2826,6 @@ footer nav{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
-/* FEELCOIN_SINGLE_ROW_WALLET_MENU_V1_START */
-.desktop-nav { flex-wrap:nowrap; }
-.desktop-nav > a { white-space:nowrap; padding-left:7px; padding-right:7px; font-size:12px; }
-.desktop-nav .fc-nav-wallets { position:relative; flex:0 0 auto; }
-.desktop-nav .fc-nav-wallets > summary {
-  display:flex; align-items:center; gap:6px;
-  padding:9px 7px; border-radius:9px; color:#bbc4d1;
-  font-size:12px; font-weight:650; white-space:nowrap; cursor:pointer; list-style:none;
-}
-.fc-nav-wallets > summary::-webkit-details-marker { display:none; }
-.fc-nav-wallets .fc-wallet-chevron { color:var(--gold); font-size:16px; line-height:1; }
-.desktop-nav .fc-nav-wallets > summary:hover,
-.desktop-nav .fc-nav-wallets[open] > summary {
-  color:white; background:rgba(255,255,255,.065);
-}
-.desktop-nav .fc-nav-wallet-options {
-  position:absolute; z-index:105; top:calc(100% + 9px); left:0;
-  min-width:240px; padding:7px; border-radius:12px;
-  border:1px solid rgba(223,180,92,.30);
-  background:#0c1422; box-shadow:0 16px 42px rgba(0,0,0,.55);
-}
-.desktop-nav .fc-nav-wallet-options a {
-  display:block; padding:10px 12px; border-radius:8px;
-  color:#f5f0e5; text-align:left; font-size:13px;
-  white-space:nowrap;
-}
-.fc-nav-wallet-options a span { display:block; margin-top:3px; font-size:11px; color:#a7b2c1; font-weight:450; }
-.desktop-nav .fc-nav-wallet-options a:hover { background:rgba(223,180,92,.12); }
-.fc-nav-wallets > summary:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
-.mobile-nav .fc-nav-wallets-mobile { grid-column:1 / -1; min-width:0; }
-.mobile-nav .fc-nav-wallets-mobile > summary {
-  padding:11px 12px; border:1px solid var(--border); border-radius:10px;
-  background:rgba(255,255,255,.045); color:#dce1e8;
-  text-align:center; font-size:13px; font-weight:700; cursor:pointer; list-style:none;
-}
-.mobile-nav .fc-nav-wallets-mobile[open] > summary { border-color:rgba(223,180,92,.45); }
-.mobile-nav .fc-nav-wallets-mobile .fc-nav-wallet-options {
-  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:7px; margin-top:7px;
-}
-.mobile-nav .fc-nav-wallets-mobile .fc-nav-wallet-options a {
-  display:block; padding:10px 7px; font-size:12px; text-align:center;
-}
-.mobile-nav .fc-nav-wallets-mobile .fc-nav-wallet-options a span { font-size:10px; }
-@media(max-width:1330px) {
-  .desktop-nav { display:none; }
-  .mobile-toggle { display:block; }
-  .mobile-nav.open { display:grid; }
-}
-@media(max-width:550px) {
-  .mobile-nav .fc-nav-wallets-mobile .fc-nav-wallet-options { grid-template-columns:1fr; }
-}
-/* FEELCOIN_SINGLE_ROW_WALLET_MENU_V1_END */
-
-/* FEELCOIN_CENTER_NAV_ARROW_V1_START */
-@media(min-width:1331px) {
-  /* Keep the original single-row height and center links in the space beside the logo. */
-  .nav-shell { gap:16px; }
-  .desktop-nav {
-    margin-left:0;
-    flex:1 1 auto;
-    min-width:0;
-    align-items:center;
-    justify-content:center;
-    gap:3px;
-  }
-  .desktop-nav > a,
-  .desktop-nav .fc-nav-wallets > summary {
-    white-space:nowrap;
-    font-size:13px;
-    line-height:1.2;
-    min-height:42px;
-    padding-left:6px;
-    padding-right:6px;
-  }
-  .desktop-nav .fc-nav-wallets > summary {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:6px;
-  }
-  .desktop-nav .fc-nav-wallets .fc-wallet-chevron {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    height:1em;
-    line-height:1;
-    transform:translateY(-2px);
-  }
-}
-/* FEELCOIN_CENTER_NAV_ARROW_V1_END */
 
 </style>
 
@@ -2947,17 +2857,10 @@ footer nav{
         <a href="#ecosystem">Ecosystem</a>
         <a href="#mining">Mining</a>
 
-        <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
-        <details class="fc-nav-wallets">
-          <summary>Wallets <span aria-hidden="true" class="fc-wallet-chevron">⌄</span></summary>
-          <div class="fc-nav-wallet-options">
-            <a href="#desktop-wallet">Desktop Wallet <span>Windows / Linux</span></a>
-            <a href="#android-wallet">Android Wallet <span>APK Beta</span></a>
-            <a href="https://paper.feelcoin.org" target="_blank" rel="noopener noreferrer">Paper Wallet <span>Generate offline keys</span></a>
-          </div>
-        </details>
+        <a href="#desktop-wallet">Desktop Wallet</a>
+        <a href="#android-wallet">Android Wallet</a>
         <a href="#docs">Documentation</a>
-        <a href="https://api.feelcoin.org/docs" target="_blank" rel="noopener noreferrer" aria-label="Developer API documentation">API Docs</a>
+        <a href="https://api.feelcoin.org/docs" target="_blank" rel="noopener noreferrer" aria-label="Developer API documentation">Developers / API</a>
 
         <a
           href="https://github.com/feelcoin-org"
@@ -3021,17 +2924,10 @@ footer nav{
       <a href="#ecosystem">Ecosystem</a>
       <a href="#mining">Mining</a>
 
-      <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
-      <details class="fc-nav-wallets fc-nav-wallets-mobile">
-        <summary>Wallets <span aria-hidden="true" class="fc-wallet-chevron">⌄</span></summary>
-        <div class="fc-nav-wallet-options">
-          <a href="#desktop-wallet">Desktop Wallet <span>Windows / Linux</span></a>
-          <a href="#android-wallet">Android Wallet <span>APK Beta</span></a>
-          <a href="https://paper.feelcoin.org" target="_blank" rel="noopener noreferrer">Paper Wallet <span>Generate offline keys</span></a>
-        </div>
-      </details>
-      <a href="#docs">Documentation</a>
-      <a href="https://api.feelcoin.org/docs" target="_blank" rel="noopener noreferrer" aria-label="Developer API documentation">API Docs</a>
+      <a href="#desktop-wallet">Desktop Wallet</a>
+        <a href="#android-wallet">Android Wallet</a>
+        <a href="#docs">Documentation</a>
+        <a href="https://api.feelcoin.org/docs" target="_blank" rel="noopener noreferrer" aria-label="Developer API documentation">Developers / API</a>
       <a
         href="https://x.com/feelcoin_org"
         target="_blank"
