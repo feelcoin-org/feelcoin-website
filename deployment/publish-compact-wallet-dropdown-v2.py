@@ -149,7 +149,7 @@ def patch(live, approved):
             "https://paper.feelcoin.org",
         }
         old_group = current[old_start:old_end]
-        hrefs = re.findall(r'<a\\b[^>]*\\bhref="([^"]+)"', old_group)
+        hrefs = re.findall(r'<a\b[^>]*\bhref="([^"]+)"', old_group)
         extra = sorted(set(hrefs) - known_links)
         if extra:
             raise RuntimeError(f"{name}: unfamiliar links within primary nav: {extra}")
