@@ -1,0 +1,24 @@
+name: Faucet foundation checks
+on:
+  pull_request:
+    paths:
+      - 'faucet/**'
+      - '.github/workflows/faucet-checks.yml'
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        working-directory: faucet
+        run: |
+          node --check server.mjs
+          node --check public/app.js
+          node --check lib/budget.mjs
+      - name: Budget unit tests
+        working-directory: faucet
+        run: npm test
