@@ -2826,68 +2826,6 @@ footer nav{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
-/* FEELCOIN_NAV_WALLETS_V2_START — accessible wallet menu and roomy header */
-.desktop-nav .fc-wallets-menu { position:relative; flex-shrink:0; }
-.desktop-nav .fc-wallets-menu > summary {
-  list-style:none; display:inline-flex; align-items:center; gap:7px;
-  padding:9px 11px; color:#bbc4d1; border-radius:9px;
-  font-size:13px; font-weight:650; white-space:nowrap; cursor:pointer;
-}
-.fc-wallets-menu > summary::-webkit-details-marker { display:none; }
-.desktop-nav .fc-wallets-menu > summary::after {
-  content:"⌄"; color:var(--gold); font-size:15px; line-height:1;
-}
-.desktop-nav .fc-wallets-menu[open] > summary,
-.desktop-nav .fc-wallets-menu > summary:hover {
-  color:white; background:rgba(255,255,255,.065);
-}
-.desktop-nav .fc-wallets-options {
-  position:absolute; top:calc(100% + 10px); left:0; z-index:250;
-  min-width:236px; padding:7px;
-  background:#101927; border:1px solid rgba(223,180,92,.36);
-  border-radius:13px; box-shadow:0 18px 42px rgba(0,0,0,.50);
-}
-.desktop-nav .fc-wallets-options a {
-  display:block; padding:12px; white-space:nowrap; border-radius:8px;
-  color:#ecdfc9; text-align:left; font-size:13px;
-}
-.desktop-nav .fc-wallets-options a:hover { background:rgba(223,180,92,.12); }
-.desktop-nav a,
-.desktop-nav .fc-wallets-menu > summary { white-space:nowrap; }
-.desktop-nav .fc-wallets-menu > summary:focus-visible,
-.fc-mobile-wallets > summary:focus-visible { outline:2px solid var(--gold2);outline-offset:3px; }
-.mobile-nav .fc-mobile-wallets { grid-column:1 / -1; min-width:0; }
-.mobile-nav .fc-mobile-wallets > summary {
-  padding:11px 12px; border:1px solid var(--border); border-radius:10px;
-  color:#dce1e8; background:rgba(255,255,255,.045);
-  font-size:13px; font-weight:700; text-align:center;
-  list-style:none; cursor:pointer; white-space:nowrap;
-}
-.mobile-nav .fc-mobile-wallets > summary::after { content:"  ▾"; color:var(--gold); }
-.mobile-nav .fc-mobile-wallets[open] > summary { border-color:var(--gold-border); }
-.mobile-nav .fc-mobile-wallets .fc-wallets-options {
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:7px; margin-top:7px;
-}
-.mobile-nav .fc-mobile-wallets .fc-wallets-options a {
-  display:block; text-align:center;
-}
-@media(min-width:1321px) {
-  .nav-shell { min-height:108px; flex-wrap:wrap; gap:6px 20px; padding:11px 0 10px; }
-  .desktop-nav { flex:1 1 100%; margin-left:0; justify-content:center; flex-wrap:nowrap; gap:3px; }
-  .desktop-nav > a { padding:9px 8px; font-size:12px; }
-  .desktop-nav .fc-wallets-menu > summary { padding:9px 8px; font-size:12px; }
-}
-@media(min-width:1001px) and (max-width:1320px) {
-  .desktop-nav { display:none; }
-  .mobile-toggle { display:block; }
-  .mobile-nav.open { display:grid; }
-}
-@media(max-width:420px) {
-  .mobile-nav .fc-mobile-wallets .fc-wallets-options { grid-template-columns:1fr; }
-}
-/* FEELCOIN_NAV_WALLETS_V2_END */
-
 </style>
 
 </head>
@@ -2916,18 +2854,13 @@ footer nav{
 
         
         <a href="#ecosystem">Ecosystem</a>
-        <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
-        <a href="https://pool.feelcoin.org" target="_blank" rel="noopener noreferrer">Pool</a>
-        <details class="fc-wallets-menu">
-          <summary>Download Wallets</summary>
-          <div class="fc-wallets-options">
-            <a href="#desktop-wallet">Desktop · Windows / Linux</a>
-            <a href="#android-wallet">Android · APK</a>
-          </div>
-        </details>
-        <a href="https://paper.feelcoin.org" target="_blank" rel="noopener noreferrer">Paper Wallet</a>
+        <a href="#mining">Mining</a>
+
+        <a href="#desktop-wallet">Desktop Wallet</a>
+        <a href="#android-wallet">Android Wallet</a>
         <a href="#docs">Documentation</a>
         <a href="https://api.feelcoin.org/docs" target="_blank" rel="noopener noreferrer" aria-label="Developer API documentation">Developers / API</a>
+        <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
 
         <a
           href="https://github.com/feelcoin-org"
@@ -2989,18 +2922,13 @@ footer nav{
 
       
       <a href="#ecosystem">Ecosystem</a>
-        <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
-        <a href="https://pool.feelcoin.org" target="_blank" rel="noopener noreferrer">Pool</a>
-        <details class="fc-wallets-menu fc-mobile-wallets">
-          <summary>Download Wallets</summary>
-          <div class="fc-wallets-options">
-            <a href="#desktop-wallet">Desktop · Windows / Linux</a>
-            <a href="#android-wallet">Android · APK</a>
-          </div>
-        </details>
-        <a href="https://paper.feelcoin.org" target="_blank" rel="noopener noreferrer">Paper Wallet</a>
+      <a href="#mining">Mining</a>
+
+      <a href="#desktop-wallet">Desktop Wallet</a>
+        <a href="#android-wallet">Android Wallet</a>
         <a href="#docs">Documentation</a>
         <a href="https://api.feelcoin.org/docs" target="_blank" rel="noopener noreferrer" aria-label="Developer API documentation">Developers / API</a>
+        <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
       <a
         href="https://x.com/feelcoin_org"
         target="_blank"
