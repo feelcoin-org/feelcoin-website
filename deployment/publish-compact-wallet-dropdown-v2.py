@@ -138,7 +138,9 @@ def patch(live, approved):
         )
         # Preserve legacy secondary anchors (such as Economics) that
         # precede Ecosystem on production mobile navigation.
-        if '<details' in prefix or '<nav' in prefix:
+        # The prefix necessarily starts with the opening <nav> tag.
+        # Reject nested nav/menu markup, not the normal outer <nav>.
+        if '<details' in prefix or prefix.count('<nav') != 1:
             raise RuntimeError(name + ": unexpected prefix structure")
 
         # Reject unfamiliar links within the group that is replaced.
