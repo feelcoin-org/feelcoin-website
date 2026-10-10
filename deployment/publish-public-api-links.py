@@ -31,7 +31,7 @@ def add_links(html):
         required = (
             "OFFICIAL FEELCOIN PUBLIC API",
             "Feelcoin Public API",
-            "Developer API \\u00b7 v1",
+            "Developer API · v1",
             "Developer API",
             "Developers / API",
         )
