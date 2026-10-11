@@ -63,7 +63,7 @@ def updated_nav(old, new, kind):
         raise RuntimeError(kind + ": original Developers / API label differs")
     new_explorer = single(re.compile(re.escape(EXPLORER)), new, kind + " approved Explorer")
     new_wallet = single(WALLET_NEW, new, kind + " approved wallet dropdown")
-    if new.count('>Web Wallet</a>') != 1:
+    if len(re.findall(r'>\s*Web Wallet\s*</a>', new)) != 1:
         raise RuntimeError(kind + ": approved Web Wallet label differs")
     if old.count('>Open Wallet</a>') != 1 and kind == "mobile":
         raise RuntimeError(kind + ": original Web Wallet link differs")
@@ -78,7 +78,7 @@ def updated_nav(old, new, kind):
 
     if out.count(EXPLORER) != 1 or out.count('<summary>Download Wallets</summary>') != 1:
         raise RuntimeError(kind + ": final navigation validation failed")
-    if out.count('>Web Wallet</a>') != 1 or out.count('>Developers / API</a>') != 1:
+    if len(re.findall(r'>\s*Web Wallet\s*</a>', out)) != 1 or out.count('>Developers / API</a>') != 1:
         raise RuntimeError(kind + ": unexpected changed labels")
     if out.index(EXPLORER) < out.index(MINING):
         raise RuntimeError(kind + ": Explorer must follow Mining")
@@ -100,7 +100,7 @@ def patch(live, approved):
             nav = single(rx, live, "live " + kind).group()
             if (nav.count(EXPLORER) != 1
                     or nav.count('<summary>Download Wallets</summary>') != 1
-                    or nav.count('>Web Wallet</a>') != 1):
+                    or len(re.findall(r'>\s*Web Wallet\s*</a>', nav)) != 1):
                 raise RuntimeError(kind + ": dropdown partially deployed")
         return live, False
 
