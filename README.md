@@ -1,5 +1,9 @@
 # 🌐 Feelcoin Official Website
 
+<p align="center">
+  <a href="https://feelcoin.org"><img src="https://feelcoin.org/assets/feelcoin-logo-v2.png" alt="Official Feelcoin logo" width="144"></a>
+</p>
+
 **The official website for Feelcoin (FEEL), an open-source RandomX Proof-of-Work cryptocurrency.**
 
 🌐 **Visit:** https://feelcoin.org  
