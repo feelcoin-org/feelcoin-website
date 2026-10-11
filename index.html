@@ -25,19 +25,19 @@ content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-
 
 <meta name="twitter:site" content="@feelcoin_org">
 
-<link rel="icon" type="image/webp" href="/assets/feelcoin-coin.webp">
-<link rel="apple-touch-icon" href="/assets/feelcoin-coin.webp">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/feelcoin-favicon-v2.png">
+<link rel="apple-touch-icon" href="/assets/feelcoin-touch-v2.png">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Feelcoin | Independent RandomX Cryptocurrency">
 <meta property="og:description"
 content="Independent CPU-oriented RandomX Proof-of-Work cryptocurrency with an open-source ecosystem and transparent protocol funding.">
 <meta property="og:url" content="https://feelcoin.org/">
-<meta property="og:image" content="https://feelcoin.org/assets/feelcoin-coin.webp">
+<meta property="og:image" content="https://feelcoin.org/assets/feelcoin-social-v2.png">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Feelcoin | Independent RandomX Cryptocurrency">
-<meta name="twitter:image" content="https://feelcoin.org/assets/feelcoin-coin.webp">
+<meta name="twitter:image" content="https://feelcoin.org/assets/feelcoin-social-v2.png">
 
 <meta name="twitter:description"
 content="CPU-oriented RandomX Proof-of-Work cryptocurrency with open-source wallets, mining pool, explorer and transparent protocol funding.">
@@ -2676,6 +2676,9 @@ footer nav{
 }
 /* ===== END FEELCOIN CORE RELEASE ===== */
 
+
+
+
 </style>
 
 <script type="application/ld+json">
@@ -2826,49 +2829,426 @@ footer nav{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
+</style>
 
-/* FEELCOIN_THREE_NAV_ONLY_START */
-/* Scoped styles for Download Wallets only; existing header layout is unchanged. */
-.desktop-nav .fc-wallet-download { position:relative; flex:0 0 auto; }
-.desktop-nav .fc-wallet-download > summary {
-  display:inline-flex; align-items:center; gap:6px;
-  padding:9px 11px; border-radius:9px; color:#bbc4d1;
-  font-size:13px; font-weight:650; cursor:pointer;
-  list-style:none; white-space:nowrap;
+
+<style id="feelcoin-nav-v4">
+/* FEELCOIN NAV CLEANUP V4 */
+
+.topbar {
+  z-index: 5000 !important;
+  overflow: visible !important;
 }
-.fc-wallet-download > summary::-webkit-details-marker { display:none; }
-.fc-wallet-download > summary::after {
-  content:"▾"; color:var(--gold); font-size:11px;
-  display:inline-block; line-height:1; align-self:center;
+
+.topbar .wrap,
+.nav-shell,
+.desktop-nav {
+  overflow: visible !important;
 }
-.desktop-nav .fc-wallet-download > summary:hover,
-.desktop-nav .fc-wallet-download[open] > summary {
-  color:white; background:rgba(255,255,255,.065);
+
+.fc-nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  z-index: 100;
 }
-.desktop-nav .fc-wallet-download .fc-wallet-download-options {
-  position:absolute; z-index:200; left:0; top:calc(100% + 8px);
-  min-width:170px; padding:6px;
-  border:1px solid rgba(223,180,92,.25); border-radius:10px;
-  background:#101825; box-shadow:0 14px 38px rgba(0,0,0,.4);
+
+.fc-nav-dropdown[open] {
+  z-index: 5001;
 }
-.desktop-nav .fc-wallet-download .fc-wallet-download-options a {
-  display:block; white-space:nowrap; padding:11px 12px;
+
+.fc-nav-dropdown summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+  color: #dce5ee;
+  font-size: 12px;
+  font-weight: 700;
 }
-.mobile-nav .fc-wallet-download { grid-column:1 / -1; }
-.mobile-nav .fc-wallet-download > summary {
-  display:flex; align-items:center; justify-content:center; gap:6px;
-  padding:11px 12px; border:1px solid var(--border); border-radius:10px;
-  color:#dce1e8; background:rgba(255,255,255,.045);
-  font-size:13px; font-weight:700; list-style:none; cursor:pointer;
+
+.fc-nav-dropdown summary:hover {
+  color: #eac57b;
 }
-.mobile-nav .fc-wallet-download .fc-wallet-download-options {
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:7px; margin-top:7px;
+
+.fc-nav-dropdown summary::-webkit-details-marker {
+  display: none;
 }
-.mobile-nav .fc-wallet-download .fc-wallet-download-options a {
-  display:block; text-align:center;
+
+.fc-nav-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 5002;
+  min-width: 195px;
+  padding: 8px;
+  background: #101927;
+  border: 1px solid rgba(216,173,88,.4);
+  border-radius: 12px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.6);
 }
-/* FEELCOIN_THREE_NAV_ONLY_END */
+
+.fc-nav-menu a {
+  display: block;
+  padding: 11px 13px;
+  color: #e8edf5;
+  font-size: 13px;
+  white-space: nowrap;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.fc-nav-menu a:hover {
+  color: #ffe2a0;
+  background: rgba(216,173,88,.15);
+}
+
+/* Footer: branding + support, no buttons */
+
+footer .footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+footer .footer-contact {
+  position: static;
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-align: right;
+}
+
+footer .footer-contact a {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .mobile-nav .fc-nav-dropdown {
+    display: block;
+    width: 100%;
+  }
+
+  .mobile-nav .fc-nav-dropdown summary {
+    display: flex;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 14px;
+  }
+
+  .mobile-nav .fc-nav-menu {
+    position: static;
+    width: 100%;
+    margin: 5px 0 10px;
+    box-shadow: none;
+  }
+
+  footer .footer-contact {
+    text-align: left;
+  }
+}
+
+/* END FEELCOIN NAV CLEANUP V4 */
+</style>
+
+
+<style id="feelcoin-nav-polish-v1">
+/* FEELCOIN NAV POLISH V1 */
+
+/* Center desktop navigation independently of branding and Wallet */
+@media (min-width: 1101px) {
+
+  .topbar .nav-shell {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .topbar .nav-shell > a.brand {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .topbar .desktop-nav {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: clamp(6px, .65vw, 12px);
+    padding: 0 clamp(100px, 12vw, 170px);
+    margin: 0;
+  }
+
+  .topbar .desktop-nav > .nav-launch {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .topbar .desktop-nav > .nav-launch:hover {
+    transform: translateY(calc(-50% - 1px));
+  }
+
+  /* Extra separation between the two dropdown buttons */
+  .topbar .desktop-nav .fc-nav-dropdown
+  + .fc-nav-dropdown {
+    margin-left: 18px;
+  }
+}
+
+/* Compact footer */
+
+footer {
+  padding-top: 16px !important;
+  padding-bottom: 18px !important;
+}
+
+footer .footer-grid {
+  gap: 10px 22px !important;
+}
+
+footer .footer-contact {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+footer .footer-contact .footer-contact-label {
+  margin-bottom: 2px;
+}
+
+footer .footer-contact a {
+  font-size: 11px;
+}
+
+footer .disclaimer {
+  margin-top: 11px !important;
+  line-height: 1.45;
+}
+
+/* END FEELCOIN NAV POLISH V1 */
+</style>
+
+
+<!-- FEELCOIN_TELEGRAM_ALIGNMENT_FIX -->
+<style>
+header nav a[href*="t.me/"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center;
+    flex-wrap: nowrap !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    line-height: 1.1 !important;
+}
+
+header nav a[href*="t.me/"] > span {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 6px !important;
+}
+
+header nav a[href*="t.me/"] svg {
+    display: block !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+</style>
+
+
+<!-- FEELCOIN_HEADER_NAV_CENTER_V1 -->
+<style>
+@media (min-width: 1600px) {
+
+  /* Leave the logo at the left and Wallet at the right */
+  .topbar .nav-shell {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+
+  /* Use all remaining space for the navigation */
+  .topbar .desktop-nav {
+    display: flex !important;
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    margin-left: 36px !important;
+    gap: 0 !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Balance the empty space before and after the links */
+  .topbar .desktop-nav::before {
+    content: "";
+    display: block;
+    flex: 0 0 0;
+    margin-right: auto;
+  }
+
+  /* Keep the Wallet button at the far right */
+  .topbar .desktop-nav > .nav-launch {
+    margin-left: auto !important;
+    flex: 0 0 auto !important;
+  }
+}
+</style>
+
+
+<!-- FEELCOIN_MOBILE_HORIZONTAL_OVERFLOW_FIX_V1 -->
+<style>
+@media (max-width: 1000px) {
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: clip !important;
+  }
+
+  .hero {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .hero .wrap,
+  .hero .hero-grid,
+  .hero .hero-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero .hero-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero .hero-actions > a {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+/* FEELCOIN_MOBILE_DROPDOWN_FIX_V1 */
+@media (max-width: 1000px) {
+
+  #mobileNav > details.fc-nav-dropdown {
+    display: block !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+  }
+
+  #mobileNav > details.fc-nav-dropdown > summary {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+
+    width: 100% !important;
+    box-sizing: border-box;
+
+    padding: 11px 12px !important;
+    margin: 0 !important;
+
+    color: #dce1e8 !important;
+    background: rgba(255,255,255,.045) !important;
+
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+
+    list-style: none !important;
+    cursor: pointer;
+  }
+
+  #mobileNav > details.fc-nav-dropdown > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #mobileNav > details.fc-nav-dropdown > summary::marker {
+    content: "";
+  }
+
+  #mobileNav > details.fc-nav-dropdown > .fc-nav-menu {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+    margin-top: 7px !important;
+  }
+}
+/* END_FEELCOIN_MOBILE_DROPDOWN_FIX_V1 */
+
+
+/* FEELCOIN_MOBILE_NAV_ARRANGEMENT_V1_START */
+
+@media (min-width:651px) and (max-width:1000px) {
+  #mobileNav {
+    grid-template-columns:
+      repeat(6, minmax(0,1fr)) !important;
+    gap: 10px !important;
+  }
+
+  #mobileNav > a {
+    grid-column: span 3;
+    min-width: 0;
+  }
+
+  #mobileNav > details.fc-nav-dropdown {
+    grid-column: 1 / -1 !important;
+  }
+
+  #mobileNav > a[href="https://x.com/feelcoin_org"],
+  #mobileNav > a[href="https://discord.com/invite/2sx7Q8yAR"],
+  #mobileNav > a[href="https://t.me/feelcoin_community"] {
+    grid-column: span 2 !important;
+  }
+}
+
+@media (max-width:650px) {
+  #mobileNav {
+    grid-template-columns: 1fr !important;
+  }
+
+  #mobileNav > a,
+  #mobileNav > details.fc-nav-dropdown {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* FEELCOIN_MOBILE_NAV_ARRANGEMENT_V1_END */
 
 </style>
 
@@ -2885,7 +3265,7 @@ footer nav{
       <a class="brand" href="/" title="Feelcoin | Independent RandomX Cryptocurrency">
         <img
           class="brand-logo"
-          src="/assets/feelcoin-coin.webp"
+          src="/assets/feelcoin-logo-v2.png"
           alt="Feelcoin">
 
         <div class="brand-copy">
@@ -2896,21 +3276,37 @@ footer nav{
 
       <nav class="desktop-nav" aria-label="Main navigation">
 
+        <a href="#about">About</a>
         
         <a href="#ecosystem">Ecosystem</a>
-        <a href="#mining">Mining</a>
-        <a href="https://faucet.feelcoin.org" target="_blank" rel="noopener noreferrer">Faucet</a>
         <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
+<a href="#mining">Mining</a>
+        <a href="https://faucet.feelcoin.org" target="_blank" rel="noopener noreferrer">Faucet</a>
 
-        <details class="fc-wallet-download">
-          <summary>Download Wallets</summary>
-          <div class="fc-wallet-download-options">
-            <a href="#desktop-wallet">Desktop Wallet</a>
-            <a href="#android-wallet">Android Wallet</a>
-          </div>
-        </details>
-        <a href="#docs">Documentation</a>
-        <a href="https://api.feelcoin.org/docs" target="_blank" rel="noopener noreferrer" aria-label="Developer API documentation">Developers / API</a>
+
+<details class="fc-nav-dropdown">
+  <summary>Downloads <span aria-hidden="true">▾</span></summary>
+  <div class="fc-nav-menu">
+    <a href="#desktop-wallet">Desktop Wallet</a>
+    <a href="#android-wallet">Android Wallet</a>
+    <a href="https://github.com/feelcoin-org/feelcoin-miner/releases/latest"
+       target="_blank" rel="noopener noreferrer">Miner</a>
+  </div>
+</details>
+
+<details class="fc-nav-dropdown">
+  <summary>Documentation <span aria-hidden="true">▾</span></summary>
+  <div class="fc-nav-menu">
+    <a href="/docs/Feelcoin_Whitepaper_v1.2.pdf"
+       target="_blank" rel="noopener noreferrer">Whitepaper</a>
+    <a href="https://api.feelcoin.org/docs"
+       target="_blank" rel="noopener noreferrer">API Docs</a>
+    <a href="https://github.com/feelcoin-org/feelcoin/blob/main/docs/ROADMAP.md"
+       target="_blank" rel="noopener noreferrer">Roadmap</a>
+  </div>
+</details>
+
+
 
         <a
           href="https://github.com/feelcoin-org"
@@ -2948,9 +3344,7 @@ footer nav{
 
         <a
           class="nav-launch"
-          href="https://wallet.feelcoin.org">
-          Web Wallet
-        </a>
+          href="https://wallet.feelcoin.org">Wallet</a>
 
       </nav>
 
@@ -2970,21 +3364,38 @@ footer nav{
       class="mobile-nav"
       aria-label="Mobile navigation">
 
+      <a href="#about">About</a>
       
       <a href="#ecosystem">Ecosystem</a>
-      <a href="#mining">Mining</a>
-      <a href="https://faucet.feelcoin.org" target="_blank" rel="noopener noreferrer">Faucet</a>
         <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
+<a href="#mining">Mining</a>
+      <a href="https://faucet.feelcoin.org" target="_blank" rel="noopener noreferrer">Faucet</a>
+      <a href="https://wallet.feelcoin.org">Wallet</a>
 
-      <details class="fc-wallet-download">
-          <summary>Download Wallets</summary>
-          <div class="fc-wallet-download-options">
-            <a href="#desktop-wallet">Desktop Wallet</a>
-            <a href="#android-wallet">Android Wallet</a>
-          </div>
-        </details>
-        <a href="#docs">Documentation</a>
-        <a href="https://api.feelcoin.org/docs" target="_blank" rel="noopener noreferrer" aria-label="Developer API documentation">Developers / API</a>
+
+<details class="fc-nav-dropdown">
+  <summary>Downloads <span aria-hidden="true">▾</span></summary>
+  <div class="fc-nav-menu">
+    <a href="#desktop-wallet">Desktop Wallet</a>
+    <a href="#android-wallet">Android Wallet</a>
+    <a href="https://github.com/feelcoin-org/feelcoin-miner/releases/latest"
+       target="_blank" rel="noopener noreferrer">Miner</a>
+  </div>
+</details>
+
+<details class="fc-nav-dropdown">
+  <summary>Documentation <span aria-hidden="true">▾</span></summary>
+  <div class="fc-nav-menu">
+    <a href="/docs/Feelcoin_Whitepaper_v1.2.pdf"
+       target="_blank" rel="noopener noreferrer">Whitepaper</a>
+    <a href="https://api.feelcoin.org/docs"
+       target="_blank" rel="noopener noreferrer">API Docs</a>
+    <a href="https://github.com/feelcoin-org/feelcoin/blob/main/docs/ROADMAP.md"
+       target="_blank" rel="noopener noreferrer">Roadmap</a>
+  </div>
+</details>
+
+
       <a
         href="https://x.com/feelcoin_org"
         target="_blank"
@@ -3008,7 +3419,7 @@ footer nav{
           Telegram
         </a>
 
-      <a href="https://wallet.feelcoin.org">Web Wallet</a>
+      
 
     </nav>
 
@@ -3100,7 +3511,7 @@ footer nav{
 
       <img
         class="hero-coin"
-        src="/assets/feelcoin-coin.webp"
+        src="/assets/feelcoin-logo-v2.png"
         alt="">
 
     </div>
@@ -3490,27 +3901,6 @@ footer nav{
       </a>
 
 
-      <!-- OFFICIAL FEELCOIN PUBLIC API -->
-      <a class="eco-card"
-         href="https://api.feelcoin.org/docs"
-         target="_blank"
-         rel="noopener noreferrer">
-
-        <div class="eco-index">PUBLIC / DEVELOPERS</div>
-
-        <h3>Feelcoin Public API</h3>
-
-        <p>
-          Read-only blockchain, emission and mining statistics
-          for exchanges, mining directories and developers.
-        </p>
-
-        <div class="eco-link">
-          api.feelcoin.org/docs →
-        </div>
-
-      </a>
-
       <a class="eco-card"
          href="https://github.com/feelcoin-org"
          target="_blank"
@@ -3765,20 +4155,6 @@ footer nav{
 
 
       <div class="doc-stack">
-
-        <a class="glass doc-small"
-           href="https://api.feelcoin.org/docs"
-           target="_blank"
-           rel="noopener noreferrer">
-
-          <strong>Developer API · v1</strong>
-
-          <span>
-            Public JSON endpoints, OpenAPI schema and integration reference
-            for exchanges, mining directories and applications.
-          </span>
-
-        </a>
 
         <a
           class="glass doc-small"
@@ -4288,7 +4664,7 @@ footer nav{
       <div class="footer-brand">
 
         <img
-          src="/assets/feelcoin-coin.webp"
+          src="/assets/feelcoin-logo-v2.png"
           alt="Feelcoin">
 
         <div>
@@ -4301,82 +4677,7 @@ footer nav{
       </div>
 
 
-      <nav class="footer-links">
 
-        <a href="https://api.feelcoin.org/docs" target="_blank" rel="noopener noreferrer">
-          Developer API
-        </a>
-
-        <a href="https://pool.feelcoin.org">
-          Pool
-        </a>
-
-        <a href="https://explorer.feelcoin.org">
-          Explorer
-        </a>
-
-        <a href="https://wallet.feelcoin.org">
-          Web Wallet
-        </a>
-
-        <a href="https://paper.feelcoin.org">
-          Paper Wallet
-        </a>
-        <a href="#desktop-wallet">
-          Desktop Wallet
-        </a>
-        <a href="#android-wallet">
-          Android Wallet 📱
-        </a>
-
-        <a
-          href="https://github.com/feelcoin-org/feelcoin-miner/releases/latest"
-          target="_blank"
-          rel="noopener noreferrer">
-          Miner
-        </a>
-
-        <a
-          href="https://github.com/feelcoin-org"
-          target="_blank"
-          rel="noopener noreferrer">
-          GitHub
-        </a>
-
-        <a
-          href="https://x.com/feelcoin_org"
-          target="_blank"
-          rel="noopener noreferrer">
-          X
-        </a>
-
-        <a
-          href="https://discord.com/invite/2sx7Q8yAR"
-          target="_blank"
-          rel="noopener noreferrer">
-          Discord
-        </a>
-<a href="https://t.me/feelcoin_community"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Feelcoin Telegram">
-          <span style="display:inline-flex;vertical-align:middle;width:16px;height:16px;margin-right:5px">
-            <svg viewBox="0 0 24 24" aria-hidden="true"
-  xmlns="http://www.w3.org/2000/svg">
-  <path fill="currentColor"
-    d="M21.4 4.6 18.2 19.7c-.2 1.1-.9 1.4-1.8.9l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1.1.5l.4-5.1 9.4-8.5c.4-.4-.1-.6-.6-.3L5.6 13.2.7 11.7c-1.1-.4-1.1-1.1.2-1.6L20 2.7c.9-.3 1.7.2 1.4 1.9Z"/>
-</svg>
-          </span>
-          Telegram
-        </a>
-
-        <a
-          href="/docs/Feelcoin_Whitepaper_v1.2.pdf"
-          target="_blank">
-          Whitepaper
-        </a>
-
-      </nav>
 
 
         <div class="footer-contact">
@@ -4772,5 +5073,47 @@ setInterval(
 
 
   <script defer src="/assets/feelcoin-back-to-top.js"></script>
+
+<script id="feelcoin-dropdown-dismiss-v1">
+/* FEELCOIN DROPDOWN OUTSIDE CLICK V1 */
+(() => {
+  const selector = "details.fc-nav-dropdown";
+
+  function closeAll(except = null) {
+    document.querySelectorAll(selector + "[open]")
+      .forEach(dropdown => {
+        if (dropdown !== except) {
+          dropdown.open = false;
+        }
+      });
+  }
+
+  // Clicking outside closes open dropdowns.
+  document.addEventListener("pointerdown", event => {
+    const inside = event.target.closest(selector);
+    closeAll(inside);
+  });
+
+  // Close after selecting a dropdown link.
+  document.addEventListener("click", event => {
+    const link = event.target.closest(
+      ".fc-nav-dropdown .fc-nav-menu a"
+    );
+
+    if (link) {
+      closeAll();
+    }
+  });
+
+  // Escape closes all menus.
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeAll();
+    }
+  });
+})();
+</script>
+
+
 </body>
 </html>
