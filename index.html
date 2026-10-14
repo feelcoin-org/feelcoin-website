@@ -2906,6 +2906,22 @@ footer nav{
   background: rgba(216,173,88,.15);
 }
 
+/* Feelcoin pool and exchange dropdown content */
+.fc-pool-dropdown .fc-nav-menu,
+.fc-exchanges-dropdown .fc-nav-menu { min-width: 220px; }
+.fc-pool-dropdown .fc-nav-menu a strong,
+.fc-exchanges-dropdown .fc-nav-menu a strong { display:block; font-weight:750; }
+.fc-pool-dropdown .fc-nav-menu a small,
+.fc-exchanges-dropdown .fc-nav-menu a small { display:block; margin-top:4px; color:#aeb9c9; font-size:11px; font-weight:500; }
+.fc-nav-group-label { margin:6px 6px 0; padding:11px 7px 6px; border-top:1px solid rgba(216,173,88,.22); color:#eac57b; font-size:12px; font-weight:750; }
+.fc-pool-dropdown .fc-nav-menu a.fc-nav-subitem { padding-left:22px; }
+@media (max-width:1000px) {
+  .mobile-nav .fc-nav-dropdown { display:block; width:100%; min-width:0; }
+  .mobile-nav .fc-nav-dropdown summary { display:flex; width:100%; justify-content:center; padding:11px 12px; border:1px solid var(--border); border-radius:10px; background:rgba(255,255,255,.045); font-size:13px; font-weight:700; }
+  .mobile-nav .fc-nav-dropdown .fc-nav-menu { position:static; width:100%; margin:6px 0 10px; box-shadow:none; }
+  .mobile-nav .fc-nav-menu a { text-align:left; }
+}
+
 /* Footer: branding + support, no buttons */
 
 footer .footer-grid {
@@ -3286,7 +3302,29 @@ header nav a[href*="t.me/"] svg {
         
         <a href="#ecosystem">Ecosystem</a>
         <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
-<a href="#mining">Mining</a>
+<details class="fc-nav-dropdown fc-pool-dropdown">
+  <summary>Mining <span aria-hidden="true">▾</span></summary>
+  <div class="fc-nav-menu">
+    <a href="https://pool.feelcoin.org/" target="_blank" rel="noopener noreferrer">
+      <strong>Official Pool</strong><small>pool.feelcoin.org</small>
+    </a>
+    <div class="fc-nav-group-label">Community Pools</div>
+    <a class="fc-nav-subitem" href="https://veinpool.fr/coin/feel?lang=en" target="_blank" rel="noopener noreferrer">
+      <strong>Veinpool</strong><small>veinpool.fr</small>
+    </a>
+  </div>
+</details>
+<details class="fc-nav-dropdown fc-exchanges-dropdown">
+  <summary>Exchanges <span aria-hidden="true">▾</span></summary>
+  <div class="fc-nav-menu">
+    <a href="https://trade.kpowbit.com/trade/FEEL_USDT" target="_blank" rel="noopener noreferrer">
+      <strong>KpowBIT</strong><small>FEEL/USDT</small>
+    </a>
+    <a href="https://fathom.cx/trade/FEEL-USDT" target="_blank" rel="noopener noreferrer">
+      <strong>Fathom</strong><small>FEEL/USDT</small>
+    </a>
+  </div>
+</details>
         <a href="https://faucet.feelcoin.org" target="_blank" rel="noopener noreferrer">Faucet</a>
 
 
@@ -3376,7 +3414,29 @@ header nav a[href*="t.me/"] svg {
       
       <a href="#ecosystem">Ecosystem</a>
         <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
-<a href="#mining">Mining</a>
+<details class="fc-nav-dropdown fc-pool-dropdown">
+  <summary>Mining <span aria-hidden="true">▾</span></summary>
+  <div class="fc-nav-menu">
+    <a href="https://pool.feelcoin.org/" target="_blank" rel="noopener noreferrer">
+      <strong>Official Pool</strong><small>pool.feelcoin.org</small>
+    </a>
+    <div class="fc-nav-group-label">Community Pools</div>
+    <a class="fc-nav-subitem" href="https://veinpool.fr/coin/feel?lang=en" target="_blank" rel="noopener noreferrer">
+      <strong>Veinpool</strong><small>veinpool.fr</small>
+    </a>
+  </div>
+</details>
+<details class="fc-nav-dropdown fc-exchanges-dropdown">
+  <summary>Exchanges <span aria-hidden="true">▾</span></summary>
+  <div class="fc-nav-menu">
+    <a href="https://trade.kpowbit.com/trade/FEEL_USDT" target="_blank" rel="noopener noreferrer">
+      <strong>KpowBIT</strong><small>FEEL/USDT</small>
+    </a>
+    <a href="https://fathom.cx/trade/FEEL-USDT" target="_blank" rel="noopener noreferrer">
+      <strong>Fathom</strong><small>FEEL/USDT</small>
+    </a>
+  </div>
+</details>
       <a href="https://faucet.feelcoin.org" target="_blank" rel="noopener noreferrer">Faucet</a>
       <a href="https://wallet.feelcoin.org">Wallet</a>
 
