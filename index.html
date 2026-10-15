@@ -3817,7 +3817,7 @@ header nav a[href*="t.me/"] svg {
   }
   .topbar .desktop-nav > a:not(.nav-launch):not(.fc-chainquiry-badge),
   .topbar .desktop-nav > details.fc-nav-dropdown > summary {
-    font-size: clamp(13px, .84vw, 16px) !important;
+    font-size: clamp(14px, .94vw, 17px) !important;
     font-weight: 400 !important;
     padding: 7px clamp(2px, .22vw, 5px) !important;
     letter-spacing: 0 !important;
@@ -3854,7 +3854,7 @@ header nav a[href*="t.me/"] svg {
     margin: 0 !important;
     padding: 9px 12px !important;
     flex: 0 0 auto !important;
-    font-size: clamp(14px, .88vw, 16px) !important;
+    font-size: clamp(15px, .98vw, 17px) !important;
     white-space: nowrap !important;
   }
   .topbar .desktop-nav > .nav-launch:hover {
@@ -5413,36 +5413,61 @@ header nav a[href*="t.me/"] svg {
 const toggle = document.getElementById("mobileToggle");
 const mobileNav = document.getElementById("mobileNav");
 
+// Hamburger navigation and the small <details> dropdowns are different
+// components. Both need explicit outside-click handling.
+function closeMobileNavigation(restoreFocus = false) {
+  if (!mobileNav.classList.contains("open")) return;
+
+  mobileNav.classList.remove("open");
+  mobileNav.querySelectorAll("details[open]").forEach(menu => {
+    menu.open = false;
+  });
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.textContent = "☰";
+
+  if (restoreFocus) toggle.focus();
+}
+
 toggle.addEventListener("click", () => {
-
-  const open = mobileNav.classList.toggle("open");
-
-  toggle.setAttribute(
-    "aria-expanded",
-    open ? "true" : "false"
-  );
-
-  toggle.textContent = open ? "×" : "☰";
-
+  if (mobileNav.classList.contains("open")) {
+    closeMobileNavigation();
+  } else {
+    mobileNav.classList.add("open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.textContent = "×";
+  }
 });
-
 
 mobileNav.querySelectorAll("a").forEach(link => {
-
-  link.addEventListener("click", () => {
-
-    mobileNav.classList.remove("open");
-
-    toggle.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
-    toggle.textContent = "☰";
-
-  });
-
+  link.addEventListener("click", () => closeMobileNavigation());
 });
+
+function mobileNavClickIsInside(event) {
+  const path = typeof event.composedPath === "function"
+    ? event.composedPath()
+    : [];
+  return path.includes(mobileNav) ||
+    path.includes(toggle) ||
+    mobileNav.contains(event.target) ||
+    toggle.contains(event.target);
+}
+
+function dismissMobileNavigationOutside(event) {
+  if (!mobileNav.classList.contains("open")) return;
+  if (mobileNavClickIsInside(event)) return;
+  closeMobileNavigation();
+}
+
+// Pointer events cover mouse and touch; click also handles keyboard
+// activation and cases where pointerdown is unavailable.
+document.addEventListener("pointerdown", dismissMobileNavigationOutside, true);
+document.addEventListener("click", dismissMobileNavigationOutside, true);
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && mobileNav.classList.contains("open")) {
+    closeMobileNavigation(true);
+  }
+}, true);
 
 
 async function copyCommand(id,button){
