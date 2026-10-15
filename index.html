@@ -3274,6 +3274,501 @@ header nav a[href*="t.me/"] svg {
   data-website-id="31247e9d-f370-427d-997a-c8e83ba1a95f">
 </script>
 
+
+
+
+
+
+
+
+
+
+
+<!-- FEELCOIN_NAV_CONSOLIDATED_V1 -->
+<style>
+
+/* Medium screens: use existing hamburger menu */
+@media (min-width:1001px) and (max-width:1599px) {
+
+
+
+
+
+  .topbar .nav-shell {
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+  }
+
+  .topbar .nav-shell > a.brand {
+    position:static !important;
+    transform:none !important;
+  }
+}
+
+/* Consistent two-column tablet navigation */
+@media (min-width:651px) and (max-width:1599px) {
+
+  .topbar #mobileNav.open {
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:10px !important;
+    align-items:start !important;
+    padding:16px 0 22px !important;
+  }
+
+  .topbar #mobileNav > a,
+  .topbar #mobileNav > details.fc-nav-dropdown {
+    grid-column:auto !important;
+    width:100% !important;
+    min-width:0 !important;
+    margin:0 !important;
+    box-sizing:border-box !important;
+  }
+
+  .topbar #mobileNav > a {
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-height:44px !important;
+    padding:10px 12px !important;
+    color:#e8edf5 !important;
+    background:#1b1e23 !important;
+    border:1px solid rgba(255,255,255,.13) !important;
+    border-radius:10px !important;
+    text-decoration:none !important;
+    font-size:13px !important;
+    font-weight:650 !important;
+    text-align:center !important;
+  }
+
+  .topbar #mobileNav > details.fc-nav-dropdown {
+    display:block !important;
+    position:relative !important;
+  }
+
+  .topbar #mobileNav > details.fc-nav-dropdown > summary {
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:100% !important;
+    min-height:44px !important;
+    padding:10px 12px !important;
+    box-sizing:border-box !important;
+    color:#e8edf5 !important;
+    background:#1b1e23 !important;
+    border:1px solid rgba(255,255,255,.13) !important;
+    border-radius:10px !important;
+    font-size:13px !important;
+    font-weight:650 !important;
+    text-align:center !important;
+    cursor:pointer;
+    list-style:none !important;
+  }
+
+  .topbar #mobileNav > details.fc-nav-dropdown > .fc-nav-menu {
+    position:static !important;
+    width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+    margin:7px 0 0 !important;
+    padding:8px !important;
+    background:#111923 !important;
+    border:1px solid rgba(216,173,88,.3) !important;
+    border-radius:10px !important;
+    box-shadow:none !important;
+  }
+
+  .topbar #mobileNav > a:hover,
+  .topbar #mobileNav > details.fc-nav-dropdown > summary:hover {
+    background:#252932 !important;
+    border-color:rgba(232,187,102,.55) !important;
+  }
+
+  /* Social links occupy one column each */
+  .topbar #mobileNav > a[href="https://x.com/feelcoin_org"],
+  .topbar #mobileNav > a[href="https://discord.com/invite/2sx7Q8yAR"],
+  .topbar #mobileNav > a[href="https://t.me/feelcoin_community"] {
+    grid-column:auto !important;
+  }
+}
+
+/* Keep the existing single-column layout on phones */
+@media (max-width:650px) {
+  .topbar #mobileNav.open {
+    grid-template-columns:1fr !important;
+  }
+
+  .topbar #mobileNav > a,
+  .topbar #mobileNav > details.fc-nav-dropdown {
+    grid-column:1 / -1 !important;
+  }
+}
+
+</style>
+<!-- END_FEELCOIN_NAV_CONSOLIDATED_V1 -->
+
+
+<!-- FEELCOIN_FLUID_DESKTOP_NAV_V1 -->
+<style>
+
+/* Desktop: fluid navigation from 1001px upward */
+@media (min-width: 1001px) {
+
+  .topbar .nav-shell {
+    min-width: 0;
+  }
+
+  .topbar .desktop-nav {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+
+    gap: clamp(0px, calc((100vw - 1000px) * .008), 6px) !important;
+  }
+
+  .topbar .desktop-nav > a:not(.nav-launch),
+  .topbar .desktop-nav .fc-nav-dropdown > summary {
+    font-size: clamp(
+      10px,
+      calc(10px + (100vw - 1000px) * .006),
+      13px
+    ) !important;
+
+    padding:
+      clamp(5px, .6vw, 9px)
+      clamp(2px, .45vw, 8px) !important;
+
+    letter-spacing: -0.15px !important;
+    white-space: nowrap !important;
+  }
+
+  .topbar .desktop-nav .fc-nav-dropdown
+  + .fc-nav-dropdown {
+    margin-left: clamp(0px, .3vw, 5px) !important;
+  }
+
+  .topbar .desktop-nav .social-nav {
+    padding-left: clamp(2px, .4vw, 6px) !important;
+    padding-right: clamp(2px, .4vw, 6px) !important;
+  }
+
+  .topbar .desktop-nav > .nav-launch {
+    font-size: clamp(10px, .8vw, 13px) !important;
+    padding:
+      clamp(7px, .65vw, 11px)
+      clamp(9px, .85vw, 15px) !important;
+
+    white-space: nowrap !important;
+  }
+
+}
+
+/* Medium desktop: reserve space for logo and wallet */
+@media (min-width: 1001px) and (max-width: 1599px) {
+
+  .topbar .desktop-nav {
+    margin-left: clamp(8px, 1vw, 16px) !important;
+  }
+
+}
+
+/* Mobile navigation remains unchanged */
+@media (max-width: 1000px) {
+
+  .topbar .desktop-nav {
+    display: none !important;
+  }
+
+  .topbar .mobile-toggle {
+    display: block !important;
+  }
+
+}
+
+</style>
+<!-- END_FEELCOIN_FLUID_DESKTOP_NAV_V1 -->
+
+
+<!-- FEELCOIN_BALANCED_NAV_V1 -->
+<style>
+
+/* Balanced, responsive desktop header */
+@media (min-width: 1001px) {
+
+  .topbar .nav-shell {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: clamp(8px, 1.2vw, 22px) !important;
+    position: relative !important;
+  }
+
+  .topbar .nav-shell > a.brand {
+    position: static !important;
+    transform: none !important;
+    flex-shrink: 0 !important;
+  }
+
+  .topbar .desktop-nav {
+    display: flex !important;
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: initial !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(1px, .35vw, 6px) !important;
+  }
+
+  .topbar .desktop-nav::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* Center links while keeping Wallet at the right */
+  .topbar .desktop-nav > a:first-child {
+    margin-left: auto !important;
+  }
+
+  .topbar .desktop-nav > .nav-launch {
+    position: static !important;
+    transform: none !important;
+    margin-left: auto !important;
+    flex: 0 0 auto !important;
+  }
+
+  .topbar .desktop-nav > .nav-launch:hover {
+    transform: none !important;
+  }
+
+  /* Regular font weight for navigation buttons */
+  .topbar .desktop-nav > a,
+  .topbar .desktop-nav .fc-nav-dropdown > summary {
+    font-weight: 400 !important;
+  }
+
+  /* Fluid button dimensions */
+  .topbar .desktop-nav > a:not(.nav-launch),
+  .topbar .desktop-nav .fc-nav-dropdown > summary {
+    font-size: clamp(10px, .72vw, 13px) !important;
+    padding:
+      clamp(5px, .55vw, 9px)
+      clamp(2px, .35vw, 7px) !important;
+    white-space: nowrap !important;
+  }
+
+  .topbar .desktop-nav > .nav-launch {
+    font-size: clamp(10px, .75vw, 13px) !important;
+    font-weight: 400 !important;
+    padding: 9px clamp(7px, .7vw, 13px) !important;
+  }
+
+  .topbar .desktop-nav .fc-nav-dropdown
+  + .fc-nav-dropdown {
+    margin-left: 0 !important;
+  }
+
+}
+
+/* Mobile navigation stays active at 1000px or below */
+@media (max-width: 1000px) {
+  .topbar .desktop-nav {
+    display: none !important;
+  }
+
+  .topbar .mobile-toggle {
+    display: block !important;
+  }
+}
+
+/* Regular font weight for mobile navigation */
+.topbar .mobile-nav > a,
+.topbar .mobile-nav > details.fc-nav-dropdown > summary {
+  font-weight: 400 !important;
+}
+
+</style>
+<!-- END_FEELCOIN_BALANCED_NAV_V1 -->
+
+
+<!-- FEELCOIN_CHAINQUIRY_STYLE_V1 -->
+<style>
+@media (min-width: 1001px) {
+
+  /* Slightly larger, regular-weight navigation text */
+  .topbar .desktop-nav > a:not(.nav-launch):not(.fc-chainquiry-badge),
+  .topbar .desktop-nav .fc-nav-dropdown > summary {
+    font-size: clamp(11px, .82vw, 14px) !important;
+    font-weight: 400 !important;
+  }
+
+  .topbar .desktop-nav > .nav-launch {
+    font-size: clamp(11px, .82vw, 14px) !important;
+  }
+
+  /* Compact Chainquiry badge */
+  .topbar .desktop-nav > .fc-chainquiry-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    padding: 0 3px !important;
+    line-height: 1 !important;
+  }
+
+  .topbar .fc-chainquiry-badge img {
+    display: block;
+    width: auto;
+    max-width: clamp(95px, 7.5vw, 125px);
+    max-height: 36px;
+    object-fit: contain;
+  }
+}
+</style>
+<!-- END_FEELCOIN_CHAINQUIRY_STYLE_V1 -->
+
+
+<!-- FEELCOIN_CHAINQUIRY_MOBILE_STYLE_V1 -->
+<style>
+@media (max-width: 1000px) {
+
+  .topbar #mobileNav > a.fc-chainquiry-mobile {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+    padding: 12px !important;
+    grid-column: 1 / -1 !important;
+  }
+
+  .topbar #mobileNav > a.fc-chainquiry-mobile img {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: min(180px, 80%) !important;
+    max-height: 46px !important;
+    object-fit: contain !important;
+  }
+}
+</style>
+<!-- END_FEELCOIN_CHAINQUIRY_MOBILE_STYLE_V1 -->
+
+
+<!-- FEELCOIN_DROPDOWN_REGULAR_FONT_V1 -->
+<style>
+
+/* Regular weight for all navigation dropdown items */
+.topbar .desktop-nav .fc-nav-menu a,
+.topbar .desktop-nav .fc-nav-menu a strong,
+.topbar .desktop-nav .fc-nav-menu a small,
+.topbar .desktop-nav .fc-nav-group-label,
+.topbar #mobileNav .fc-nav-menu a,
+.topbar #mobileNav .fc-nav-menu a strong,
+.topbar #mobileNav .fc-nav-menu a small,
+.topbar #mobileNav .fc-nav-group-label {
+  font-weight: 400 !important;
+}
+
+/* Also keep mobile dropdown headings lightweight */
+.topbar #mobileNav details.fc-nav-dropdown > summary,
+.topbar .desktop-nav details.fc-nav-dropdown > summary {
+  font-weight: 400 !important;
+}
+
+</style>
+<!-- END_FEELCOIN_DROPDOWN_REGULAR_FONT_V1 -->
+
+
+<!-- FEELCOIN_NAV_READABILITY_V1 -->
+<style>
+
+/* Desktop navigation */
+@media (min-width: 1001px) {
+
+  .topbar .desktop-nav > a:not(.nav-launch):not(.fc-chainquiry-badge),
+  .topbar .desktop-nav > details.fc-nav-dropdown > summary,
+  .topbar .desktop-nav > .nav-launch {
+    font-size: clamp(12px, .88vw, 15px) !important;
+    font-weight: 400 !important;
+    white-space: nowrap !important;
+  }
+
+  .topbar .desktop-nav {
+    gap: clamp(0px, .25vw, 5px) !important;
+  }
+
+  .topbar .desktop-nav > a:not(.nav-launch):not(.fc-chainquiry-badge),
+  .topbar .desktop-nav > details.fc-nav-dropdown > summary {
+    padding: 7px clamp(2px, .3vw, 6px) !important;
+  }
+
+  /* Desktop dropdown lists */
+  .topbar .desktop-nav .fc-nav-menu a,
+  .topbar .desktop-nav .fc-nav-menu a strong,
+  .topbar .desktop-nav .fc-nav-group-label {
+    font-size: clamp(13px, .85vw, 15px) !important;
+    font-weight: 400 !important;
+  }
+
+  .topbar .desktop-nav .fc-nav-menu a small {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+  }
+
+  /* Standard Chainquiry badge */
+  .topbar .desktop-nav > .fc-chainquiry-badge {
+    padding: 0 2px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .topbar .fc-chainquiry-badge img {
+    width: auto !important;
+    height: auto !important;
+    max-width: clamp(100px, 8.5vw, 150px) !important;
+    max-height: 44px !important;
+    object-fit: contain !important;
+  }
+}
+
+/* Mobile navigation */
+@media (max-width: 1000px) {
+
+  .topbar #mobileNav > a:not(.fc-chainquiry-mobile),
+  .topbar #mobileNav > details.fc-nav-dropdown > summary {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+  }
+
+  .topbar #mobileNav .fc-nav-menu a,
+  .topbar #mobileNav .fc-nav-menu a strong,
+  .topbar #mobileNav .fc-nav-group-label {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+  }
+
+  .topbar #mobileNav .fc-nav-menu a small {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+  }
+
+  .topbar #mobileNav > .fc-chainquiry-mobile img {
+    width: auto !important;
+    height: auto !important;
+    max-width: min(200px, 90%) !important;
+    max-height: 55px !important;
+    object-fit: contain !important;
+  }
+}
+
+</style>
+<!-- END_FEELCOIN_NAV_READABILITY_V1 -->
+
 </head>
 
 
@@ -3299,7 +3794,7 @@ header nav a[href*="t.me/"] svg {
       <nav class="desktop-nav" aria-label="Main navigation">
 
         <a href="#about">About</a>
-        
+
         <a href="#ecosystem">Ecosystem</a>
         <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
 <details class="fc-nav-dropdown fc-pool-dropdown">
@@ -3388,7 +3883,20 @@ header nav a[href*="t.me/"] svg {
           Telegram
         </a>
 
-        <a
+        <!-- FEELCOIN_CHAINQUIRY_BADGE_V1 -->
+<a class="fc-chainquiry-badge"
+   href="https://chainquiry.com/projects/feelcoin/"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="View Feelcoin on Chainquiry">
+  <img decoding="async"
+       src="https://chainquiry.com/?cqbh_badge=1&amp;theme=dark&amp;size=standard"
+       alt="Listed on Chainquiry"
+       loading="lazy">
+</a>
+<!-- END_FEELCOIN_CHAINQUIRY_BADGE_V1 -->
+
+<a
           class="nav-launch"
           href="https://wallet.feelcoin.org">Wallet</a>
 
@@ -3411,9 +3919,10 @@ header nav a[href*="t.me/"] svg {
       aria-label="Mobile navigation">
 
       <a href="#about">About</a>
-      
+
       <a href="#ecosystem">Ecosystem</a>
         <a href="https://explorer.feelcoin.org" target="_blank" rel="noopener noreferrer">Explorer</a>
+<a href="https://github.com/feelcoin-org" target="_blank" rel="noopener noreferrer">GitHub</a>
 <details class="fc-nav-dropdown fc-pool-dropdown">
   <summary>Mining <span aria-hidden="true">▾</span></summary>
   <div class="fc-nav-menu">
@@ -3489,9 +3998,24 @@ header nav a[href*="t.me/"] svg {
           Telegram
         </a>
 
-      
 
-    </nav>
+
+
+
+<!-- FEELCOIN_CHAINQUIRY_MOBILE_V1 -->
+<a class="fc-chainquiry-mobile"
+   href="https://chainquiry.com/projects/feelcoin/"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="View Feelcoin on Chainquiry">
+  <img
+    decoding="async"
+    loading="lazy"
+    src="https://chainquiry.com/?cqbh_badge=1&amp;theme=dark&amp;size=standard"
+    alt="Listed on Chainquiry">
+</a>
+<!-- END_FEELCOIN_CHAINQUIRY_MOBILE_V1 -->
+</nav>
 
   </div>
 </header>
@@ -4073,7 +4597,7 @@ header nav a[href*="t.me/"] svg {
 
             Direct solo mining
 
-            
+
 
           </div>
 
@@ -4163,7 +4687,7 @@ header nav a[href*="t.me/"] svg {
 
   </div>
 
-      
+
 
 <section id="docs" class="section">
 
@@ -4336,7 +4860,7 @@ header nav a[href*="t.me/"] svg {
 
 <div class="wrap">
 
-  
+
 <section id="network-status" class="section fc-network-wrap">
   <div class="fc-network-shell">
 
