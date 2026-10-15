@@ -3769,6 +3769,130 @@ header nav a[href*="t.me/"] svg {
 </style>
 <!-- END_FEELCOIN_NAV_READABILITY_V1 -->
 
+<!-- FEELCOIN_HEADER_RESPONSIVE_CENTER_V2 -->
+<style id="feelcoin-header-responsive-center-v2">
+/* One final authoritative desktop-header layout.
+   Branding / Wallet keep their positions, while all other navigation
+   items are centered within the actual available middle space. */
+@media (min-width: 1101px) {
+  .topbar > .wrap {
+    width: min(1480px, calc(100% - 48px)) !important;
+    max-width: none !important;
+  }
+  .topbar .nav-shell {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: max-content minmax(0, 1fr) !important;
+    gap: clamp(14px, 1.2vw, 24px) !important;
+    align-items: center !important;
+    justify-content: initial !important;
+    min-width: 0 !important;
+  }
+  .topbar .nav-shell > a.brand {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  .topbar .desktop-nav {
+    position: relative !important;
+    display: flex !important;
+    flex: initial !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: clamp(1px, .24vw, 5px) !important;
+    padding: 0 86px 0 0 !important;
+    margin: 0 !important;
+  }
+  .topbar .desktop-nav::before {
+    display: none !important;
+    content: none !important;
+  }
+  .topbar .desktop-nav > a:first-child {
+    margin-left: 0 !important;
+  }
+  .topbar .desktop-nav > a:not(.nav-launch):not(.fc-chainquiry-badge),
+  .topbar .desktop-nav > details.fc-nav-dropdown > summary {
+    font-size: clamp(11px, .73vw, 14px) !important;
+    font-weight: 400 !important;
+    padding: 7px clamp(2px, .22vw, 5px) !important;
+    letter-spacing: 0 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+  .topbar .desktop-nav > details.fc-nav-dropdown {
+    flex: 0 0 auto !important;
+  }
+  .topbar .desktop-nav > details.fc-nav-dropdown
+  + details.fc-nav-dropdown {
+    margin-left: 0 !important;
+  }
+  .topbar .desktop-nav > a.fc-chainquiry-badge {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 2px !important;
+  }
+  .topbar .desktop-nav > .fc-chainquiry-badge img {
+    display: block !important;
+    width: auto !important;
+    max-width: clamp(82px, 6.6vw, 128px) !important;
+    max-height: 36px !important;
+    object-fit: contain !important;
+  }
+  .topbar .desktop-nav > .nav-launch {
+    position: absolute !important;
+    top: 50% !important;
+    right: 0 !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+    padding: 9px 12px !important;
+    flex: 0 0 auto !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+  .topbar .desktop-nav > .nav-launch:hover {
+    transform: translateY(calc(-50% - 1px)) !important;
+  }
+  .topbar .mobile-toggle {
+    display: none !important;
+  }
+}
+/* At narrow desktop widths the labels cannot fit at a readable size.
+   Use the existing two-column tablet nav rather than overlap the logo. */
+@media (min-width: 1001px) and (max-width: 1100px) {
+  .topbar .nav-shell {
+    position: relative !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  .topbar .nav-shell > a.brand {
+    position: static !important;
+    transform: none !important;
+  }
+  .topbar .desktop-nav {
+    display: none !important;
+  }
+  .topbar .mobile-toggle {
+    display: block !important;
+  }
+  .topbar #mobileNav.open {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+</style>
+<!-- END_FEELCOIN_HEADER_RESPONSIVE_CENTER_V2 -->
+
+
 </head>
 
 
