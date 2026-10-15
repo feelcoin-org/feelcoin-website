@@ -3804,8 +3804,8 @@ header nav a[href*="t.me/"] svg {
     align-items: center !important;
     justify-content: center !important;
     flex-wrap: nowrap !important;
-    gap: clamp(1px, .24vw, 5px) !important;
-    padding: 0 86px 0 0 !important;
+    gap: clamp(1px, .2vw, 4px) !important;
+    padding: 0 92px 0 0 !important;
     margin: 0 !important;
   }
   .topbar .desktop-nav::before {
@@ -3817,7 +3817,7 @@ header nav a[href*="t.me/"] svg {
   }
   .topbar .desktop-nav > a:not(.nav-launch):not(.fc-chainquiry-badge),
   .topbar .desktop-nav > details.fc-nav-dropdown > summary {
-    font-size: clamp(11px, .73vw, 14px) !important;
+    font-size: clamp(13px, .84vw, 16px) !important;
     font-weight: 400 !important;
     padding: 7px clamp(2px, .22vw, 5px) !important;
     letter-spacing: 0 !important;
@@ -3854,7 +3854,7 @@ header nav a[href*="t.me/"] svg {
     margin: 0 !important;
     padding: 9px 12px !important;
     flex: 0 0 auto !important;
-    font-size: 14px !important;
+    font-size: clamp(14px, .88vw, 16px) !important;
     white-space: nowrap !important;
   }
   .topbar .desktop-nav > .nav-launch:hover {
@@ -3866,7 +3866,7 @@ header nav a[href*="t.me/"] svg {
 }
 /* At narrow desktop widths the labels cannot fit at a readable size.
    Use the existing two-column tablet nav rather than overlap the logo. */
-@media (min-width: 1001px) and (max-width: 1100px) {
+@media (min-width: 1001px) and (max-width: 1240px) {
   .topbar .nav-shell {
     position: relative !important;
     display: flex !important;
@@ -5783,43 +5783,57 @@ setInterval(
 
   <script defer src="/assets/feelcoin-back-to-top.js"></script>
 
-<script id="feelcoin-dropdown-dismiss-v1">
-/* FEELCOIN DROPDOWN OUTSIDE CLICK V1 */
+<script id="feelcoin-dropdown-dismiss-v2">
+/* Keep exactly one header dropdown open. Dismiss it on outside
+   pointer/click, selecting a link, or pressing Escape. */
 (() => {
-  const selector = "details.fc-nav-dropdown";
+  const selector = ".topbar details.fc-nav-dropdown";
+  const menuLinkSelector = ".topbar details.fc-nav-dropdown .fc-nav-menu a";
 
-  function closeAll(except = null) {
-    document.querySelectorAll(selector + "[open]")
-      .forEach(dropdown => {
-        if (dropdown !== except) {
-          dropdown.open = false;
-        }
-      });
-  }
+  const elementFrom = event => {
+    const target = event.target;
+    return target instanceof Element ? target : target?.parentElement ?? null;
+  };
 
-  // Clicking outside closes open dropdowns.
+  const closeAll = (except = null) => {
+    document.querySelectorAll(selector + "[open]").forEach(menu => {
+      if (menu !== except) menu.open = false;
+    });
+  };
+
+  // Capturing pointerdown ensures outside clicks work even when
+  // a child element stops propagation later.
   document.addEventListener("pointerdown", event => {
-    const inside = event.target.closest(selector);
-    closeAll(inside);
-  });
+    const element = elementFrom(event);
+    closeAll(element?.closest(selector) ?? null);
+  }, true);
 
-  // Close after selecting a dropdown link.
+  // Covers keyboard-triggered clicks and dismisses a menu on link selection.
   document.addEventListener("click", event => {
-    const link = event.target.closest(
-      ".fc-nav-dropdown .fc-nav-menu a"
-    );
-
-    if (link) {
+    const element = elementFrom(event);
+    if (element?.closest(menuLinkSelector)) {
       closeAll();
+    } else {
+      closeAll(element?.closest(selector) ?? null);
     }
-  });
+  }, true);
 
-  // Escape closes all menus.
+  // Opening one native <details> menu closes the others.
+  document.addEventListener("toggle", event => {
+    const menu = event.target;
+    if (menu instanceof Element && menu.matches(selector) && menu.open) {
+      closeAll(menu);
+    }
+  }, true);
+
   document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
+    if (event.key !== "Escape") return;
+    const open = document.querySelector(selector + "[open]");
+    if (open) {
       closeAll();
+      open.querySelector("summary")?.focus();
     }
-  });
+  }, true);
 })();
 </script>
 
