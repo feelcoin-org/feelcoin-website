@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feelcoin Faucet — Made by the Community, for the Community</title>
+<meta name="description" content="Discover Feelcoin, choose a wallet and spread the FEEL. The community-first Feelcoin faucet and referral program.">
+<meta name="theme-color" content="#070b12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Feelcoin Faucet — Spread the Feels">
+<meta property="og:description" content="Your first FEEL starts here. Made by the Community, for the Community.">
+<meta property="og:url" content="https://faucet.feelcoin.org/">
+<meta property="og:image" content="https://feelcoin.org/assets/feelcoin-coin.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://feelcoin.org/assets/feelcoin-coin.webp" type="image/webp">
+<link rel="stylesheet" href="/styles.css">
+<script defer src="/app.js"></script>
+</head>
+<body>
+<header class="header"><div class="wrap nav"><a class="brand" href="https://feelcoin.org/"><img src="https://feelcoin.org/assets/feelcoin-coin.webp" alt="Feelcoin coin"> <span>FEELCOIN <small>COMMUNITY FAUCET</small></span></a><a href="https://feelcoin.org/" class="navlink">Official website ↗</a></div></header>
+<main>
+<section class="hero wrap">
+<div class="eyebrow">✦ COMMUNITY-POWERED · OPEN SOURCE</div>
+<h1>Your first <em>FEEL</em><br>starts here.</h1>
+<p class="lead">Discover Feelcoin. Invite friends. Help a community grow. Together, we're building something that belongs to everyone.</p>
+<p class="slogan">Made by the Community, for the Community.</p>
+<div id="status" class="notice" role="status">Checking faucet availability…</div>
+<div class="heroactions"><a href="#claim" class="button primary">Get started ↗</a><a href="#invite" class="button outline">Spread the Feels</a></div>
+</section>
+<section class="wrap content-grid">
+<div class="panel" id="claim">
+<div class="section-label">01 / GET STARTED</div>
+<h2>Claim your place in the community.</h2>
+<p>First, choose a wallet. Then enter your public FEEL receiving address. Never share your private key or recovery seed.</p>
+<div class="wallets"><a id="desktop" class="wallet" href="https://github.com/feelcoin-org/feelcoin-desktop/releases/tag/v0.1.0-alpha" target="_blank" rel="noopener noreferrer"><span class="wallet-icon">▣</span><span><strong>Desktop wallet <i>Recommended</i></strong><small>Windows & Linux · direct control</small></span><span>↗</span></a><a id="webwallet" class="wallet" href="https://wallet.feelcoin.org" target="_blank" rel="noopener noreferrer"><span class="wallet-icon">◈</span><span><strong>Web wallet</strong><small>Quick start · safeguard your seed</small></span><span>↗</span></a></div>
+<form id="claimForm" autocomplete="off">
+<label for="address">Your FEEL public address</label>
+<textarea id="address" name="address" spellcheck="false" maxlength="110" placeholder="Paste your public wallet address" required></textarea>
+<input id="referral" name="referral" type="hidden">
+<div id="referred" class="invite-tag" hidden></div>
+<div id="captcha"></div>
+<button id="submit" class="button primary wide" type="submit" disabled>Registration unavailable</button>
+<div id="response" class="response" role="status" aria-live="polite"></div>
+</form>
+<p class="fineprint">Early access: accepted registrations are pending review, not completed payouts. Any future FEEL distribution will depend on verified network emission, available funds and eligibility.</p>
+</div>
+<aside class="panel side" id="invite">
+<div class="section-label">02 / SPREAD THE FEELS</div>
+<h2>Friends earn.<br><em>Friends give.</em></h2>
+<p>Refer real newcomers to Feelcoin. Both the inviter and invited member can qualify for a FEEL reward when checks are complete and funds are available.</p>
+<div class="step"><span>01</span><div><strong>Share your link</strong><p>Show friends what Feelcoin is building.</p></div></div>
+<div class="step"><span>02</span><div><strong>Welcome a new user</strong><p>They choose a wallet and enter their public address.</p></div></div>
+<div class="step"><span>03</span><div><strong>Grow together</strong><p>Both rewards remain pending until verified and funded.</p></div></div>
+<div id="refBox" class="ref-box" hidden><div class="section-label">YOUR INVITATION LINK</div><div id="refUrl" class="link-text"></div><button id="copy" type="button" class="button outline wide">Copy invitation link</button><button id="share" type="button" class="button muted wide">Share invitation</button></div>
+</aside>
+</section>
+<section class="wrap stats"><div><span id="claims">—</span><small>Registrations queued</small></div><div><span id="referrals">—</span><small>Referrals under review</small></div><div><span>0 FEEL</span><small>Distributed so far</small></div></section>
+<section class="wrap manifesto"><div class="section-label">03 / THE FEELCOIN WAY</div><h2>Real people. Real community.<br><em>No artificial engagement.</em></h2><p>Learn about CPU mining, explore transactions, create original guides, and welcome newcomers. Social engagement is voluntary; we reward genuine participation, not purchased likes or follows.</p><div class="links"><a href="https://pool.feelcoin.org">Mining pool ↗</a><a href="https://explorer.feelcoin.org">Block explorer ↗</a><a href="https://github.com/feelcoin-org">Open source ↗</a></div></section>
+</main>
+<footer class="wrap footer"><span>FEELCOIN · IN FEELS WE TRUST.</span><span>Made by the Community, for the Community. ♥</span></footer>
+</body></html>
