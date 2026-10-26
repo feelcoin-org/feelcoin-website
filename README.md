@@ -46,12 +46,12 @@ The official [Feelcoin Core v1.0.0 release](https://github.com/feelcoin-org/feel
 
 Feelcoin provides several wallet interfaces for different needs:
 
-- **Android Stable v0.3.0:** https://github.com/feelcoin-org/feelcoin-android/releases/tag/v0.3.0
+- **Android Stable v0.3.1:** https://github.com/feelcoin-org/feelcoin-android/releases/tag/v0.3.1
 - **Desktop Stable v1.0.0 (Windows and Linux):** https://github.com/feelcoin-org/feelcoin-desktop/releases/tag/v1.0.0
 - **Web wallet:** https://wallet.feelcoin.org
 - **Paper wallet generator:** https://paper.feelcoin.org
 
-Wallet users should keep offline recovery-seed backups, verify release checksums and review the published security limitations. Stable branding does not imply an independent external security audit.
+Wallet users should keep offline recovery-seed backups, verify release checksums and review the published security limitations.
 
 ### 🧩 Developers and public API
 
@@ -94,7 +94,7 @@ Feelcoin documents its development, infrastructure and protocol funding through 
 | Developer API | https://api.feelcoin.org/docs |
 | Web wallet | https://wallet.feelcoin.org |
 | Paper wallet | https://paper.feelcoin.org |
-| Android wallet Stable v0.3.0 | https://github.com/feelcoin-org/feelcoin-android/releases/tag/v0.3.0 |
+| Android wallet Stable v0.3.0 | https://github.com/feelcoin-org/feelcoin-android/releases/tag/v0.3.1 |
 | Desktop wallet Stable v1.0.0 | https://github.com/feelcoin-org/feelcoin-desktop/releases/tag/v1.0.0 |
 
 ---
