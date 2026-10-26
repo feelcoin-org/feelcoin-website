@@ -38,12 +38,16 @@ The pool website is available at https://pool.feelcoin.org. Review its current s
 
 The public explorer at https://explorer.feelcoin.org gives miners and community members access to public chain information, including block lookups, transaction hashes and network statistics.
 
+### Core v1.0.0 — mandatory v17 upgrade
+
+The official [Feelcoin Core v1.0.0 release](https://github.com/feelcoin-org/feelcoin/releases/tag/v1.0.0) supports Windows x64 and Ubuntu 26.04 x64. Protocol v17 activates at mainnet block 21,205. Full node operators, solo miners operating their own daemon and pool operators must upgrade before activation. Official pool miners do not need to change their mining clients.
+
 ### 📱 Wallet ecosystem
 
 Feelcoin provides several wallet interfaces for different needs:
 
 - **Android Stable v0.3.0:** https://github.com/feelcoin-org/feelcoin-android/releases/tag/v0.3.0
-- **Desktop Stable v0.3.0 (Windows and Linux):** https://github.com/feelcoin-org/feelcoin-desktop/releases/tag/v0.3.0
+- **Desktop Stable v1.0.0 (Windows and Linux):** https://github.com/feelcoin-org/feelcoin-desktop/releases/tag/v1.0.0
 - **Web wallet:** https://wallet.feelcoin.org
 - **Paper wallet generator:** https://paper.feelcoin.org
 
@@ -91,7 +95,7 @@ Feelcoin documents its development, infrastructure and protocol funding through 
 | Web wallet | https://wallet.feelcoin.org |
 | Paper wallet | https://paper.feelcoin.org |
 | Android wallet Stable v0.3.0 | https://github.com/feelcoin-org/feelcoin-android/releases/tag/v0.3.0 |
-| Desktop wallet Stable v0.3.0 | https://github.com/feelcoin-org/feelcoin-desktop/releases/tag/v0.3.0 |
+| Desktop wallet Stable v1.0.0 | https://github.com/feelcoin-org/feelcoin-desktop/releases/tag/v1.0.0 |
 
 ---
 
