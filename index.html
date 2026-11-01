@@ -5160,7 +5160,7 @@ header nav a[href*="t.me/"] svg {
     <div class="core-release-copy">
       <div class="core-release-kicker">OFFICIAL RELEASE · STABLE v1.0.0</div>
       <h2>Feelcoin Desktop Wallet <span style="color:#e9bf65;">v1.0.0</span></h2>
-      <p>Your FEEL. Your keys. Your desktop. The updated non-custodial wallet for Windows and Ubuntu Linux includes Core v1.0 and protocol v17 support for the upcoming activation at block 21,205.</p>
+      <p>Your FEEL. Your keys. Your desktop. The updated non-custodial wallet for Windows and Ubuntu Linux includes Core v1.0 and protocol v17 support, activated on mainnet at block 21,205.</p>
       <div class="core-release-meta">
         <span>Windows 🪟</span><span>Ubuntu 22.04 / 24.04 / 26.04 🐧</span><span>Self-Custody</span><span>Core v1.0</span>
       </div>
@@ -5235,7 +5235,7 @@ header nav a[href*="t.me/"] svg {
       <div class="core-release-kicker">LATEST STABLE RELEASE · MANDATORY V17 CORE UPGRADE</div>
       <h2>Feelcoin Core v1.0.0</h2>
       <p>Official Core for Windows x64 and Ubuntu 26.04 x64. Includes the first Windows Core distribution and protocol v17: integer-only LWMA difficulty adjustment, tighter timestamp validation and improved alternative-chain consensus consistency.</p>
-      <p><strong>Protocol v17 activates at block 21,205.</strong> Upgrade any full node or solo mining daemon before activation. Existing miners on the official pool can continue without changing their miner software.</p>
+      <p><strong>Protocol v17 activated at block 21,205.</strong> Full nodes and solo mining daemons must run a compatible Core version to remain on the main chain. Existing miners on the official pool can continue without changing their miner software.</p>
       <div class="core-release-meta">
         <span>Windows x64</span><span>Ubuntu 26.04 x64</span><span>RandomX</span><span>SHA-256 Checksums</span>
       </div>
@@ -5815,17 +5815,17 @@ setInterval(
 </style>
 <aside id="fc-v17-notice" aria-labelledby="fc-v17-title" role="region" hidden>
   <button class="fc-v17-dismiss" type="button" aria-label="Dismiss upgrade notice" title="Dismiss for 24 hours">×</button>
-  <div class="fc-v17-eyebrow">⚠️ Mandatory network upgrade</div>
+  <div class="fc-v17-eyebrow">Protocol v17 active · upgrade required for nodes</div>
   <h2 id="fc-v17-title">Feelcoin Core v1.0.0 · Protocol v17</h2>
-  <div class="fc-v17-activation">Activation: block 21,205 · estimated October 31</div>
-  <p>Node operators, solo miners using their own daemon, and pool operators must upgrade Core before activation. Desktop Wallet users should update to v1.0.0.</p>
+  <div class="fc-v17-activation">Activated on mainnet at block 21,205</div>
+  <p>Node operators, solo miners using their own daemon, and pool operators must use v17-compatible Core to remain synchronized. Desktop Wallet users should update to v1.0.0.</p>
   <p><strong>What's new:</strong> 90-block integer-only LWMA difficulty adjustment, tighter 30-minute future timestamp limit, and consistent chain validation.</p>
   <p>Mining on the official Feelcoin pool? <strong>No changes to your miner software are required.</strong></p>
   <div class="fc-v17-buttons">
     <a class="fc-v17-core" href="https://github.com/feelcoin-org/feelcoin/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">Download Core v1.0.0</a>
     <a class="fc-v17-desktop" href="https://github.com/feelcoin-org/feelcoin-desktop/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">Desktop Wallet v1.0.0</a>
   </div>
-  <p class="fc-v17-footnote">The date is an estimate; activation depends on block height. Back up wallet data and verify checksums. Dismiss to hide this notice for 24 hours.</p>
+  <p class="fc-v17-footnote">The hard fork has activated. Back up wallet data and verify checksums before updating. Dismiss to hide this notice for 24 hours.</p>
 </aside>
 <script id="fc-v17-notice-script">
 (function(){
